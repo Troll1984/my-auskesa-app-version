@@ -1,0 +1,51 @@
+@use '../styleFileOur/variables' as vars;
+.section-two { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .card-ascetic {       
+        width: 100%;
+        height: auto;
+        background:hsla(21, 14%, 76%, 0.148);        
+        display: none;
+        margin-top: 30px;
+        position: relative;
+        padding: 20px;
+        border-radius: 10px;
+        .btn {
+            position: absolute;
+            width: 40px;
+            top: 5px;
+            right: 5px;
+            @media(max-width: 600px) {                
+                top: -3px;
+                right: 7px;
+                              
+            }
+        }
+        @media(max-width: 1400px){
+           height: 650px;
+        }       
+        @media(max-width: 1200px){
+            height: 700px;
+            width: 90%;
+            margin-top: 70px;
+           
+        }
+        @media(max-width: 800px){
+            height: 750px;
+            width: 90%;            
+        }
+        @media(max-width: 600px){
+            height: 640px;
+            width: 100%;
+            margin-top: 30px;
+            padding: 5px;            
+        }
+    }
+}
+body {
+    scrollbar-width:none;
+}
+
+     

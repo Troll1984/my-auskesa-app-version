@@ -1,0 +1,37 @@
+
+@use '../styleFileOur/variables' as vars;
+.nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content:space-between;    
+    align-items: center;
+    list-style: none;    
+    width: 100%;
+    height: auto;     
+    > li {
+       background: vars.$bg-template1;
+            font-size: 1.2rem;
+            font-weight: bold;
+            height: 45px;      
+             border-radius: vars.$radius-button;
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            flex: 1;
+            border: 1px solid vars.$border-nav;           
+            cursor: pointer;      
+            box-shadow: -3px -9px 18px -5px rgba(0,0,0,0.66);   
+             @media(max-width: 600px) {
+                font-size: 1rem;
+            }                 
+            &:active {
+                transform: scale(0.95);
+                box-shadow: none;
+            }  
+        }
+    }
+    

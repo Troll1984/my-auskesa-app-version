@@ -1,0 +1,14 @@
+@use '@fortawesome/fontawesome-free/scss/fontawesome';
+@use '@fortawesome/fontawesome-free/scss/solid';
+@use '@fortawesome/fontawesome-free/scss/brands';
+@use '@fortawesome/fontawesome-free/scss/regular';
+
+@use './styleFileIndex/auth';
+@use './styleFileIndex/base';
+@use './styleFileIndex/header';
+@use './styleFileIndex/main';
+@use './styleFileIndex/reset';
+@use './styleFileIndex/nav';
+@use './styleFileOur/variables';
+@use "flatpickr/dist/flatpickr.css";
+

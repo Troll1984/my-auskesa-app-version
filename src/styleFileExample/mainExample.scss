@@ -1,0 +1,99 @@
+ @use '../styleFileOur/variables' as vars;
+ .info {   
+        display: none;
+        height: 600px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding: 30px;
+        scrollbar-width: thin;
+        scrollbar-color: #3b2308 transparent;
+        background: vars.$bg-input;
+        border-radius: 10px;
+        margin-top: 30px;         
+        font-size: vars.$font-size-style ;
+        @media(max-width: 1400px){
+            height: 450px;
+        }
+        @media(max-width: 1400px){
+            height: 500px;
+            margin: 40px auto;
+        }
+        @media(max-width: 1200px){
+            height: 1000px;
+            width: 85%;
+            margin: 40px auto;
+        }
+        @media(max-width: 800px){
+            height: 750px;
+            width: 85%;
+            margin: 40 auto;
+        }
+        @media(max-width: 600px){
+            height: 500px;
+            width: 100%;
+            margin: 40px auto;
+        }     
+    }
+        h3, h2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    p {
+        text-align:start;
+        margin-top: 10px;
+    }
+    .list {
+        list-style:decimal ;
+        text-align: start;
+    }
+    .list2 {
+        list-style: disc;
+        text-align: start;
+    }
+.btn,
+.btn1 {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;       
+        cursor: pointer;       
+        background: none;
+        color:#ffffff;
+        box-shadow: 0px 0px 12px -1px rgba(49, 48, 48, 0.75);
+        border-radius: 8px;        
+        padding: 10px 10px;
+        border: none;
+         @media(max-width: 1400px) {
+          
+           
+         }
+        @media(max-width: 600px) {
+             padding: 10px 10px;
+             margin-top: 10px;
+        }
+    }
+    .logo1 {
+        display: none;
+    }
+    .section-one {
+        position: relative;
+        .btn1 {
+
+            @media(max-width: 1200px) {
+                top: 5px;
+                right: 80px;
+                position: absolute;
+            }
+            @media(max-width: 800px) {
+                right: 65px;
+                position: absolute;
+            }
+            @media(max-width: 600px) {
+                position: absolute;
+                top: 0px;
+                right: 15px;
+            }
+        }
+    }
+    

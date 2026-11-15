@@ -1,0 +1,382 @@
+import { getElement } from '../componetsOur/dom';
+import { supabase } from '../supabase';
+import { getToday, parseDate, formatDate, checkAscetic, } from './verificationAsceses';
+import { translations, currentLanguage, updateLanguage } from '../componetsOur/lang';
+import './slider';
+
+// Кнопка назад
+const back = getElement('.btn');
+back.addEventListener('click', () => {
+     window.location.href = './index.html';
+});
+
+//Обозначения типа для Ts
+const saveAscetic = getElement('.save-ascetic');
+export interface Ascetic {
+    id: string;
+    nameAscetic: string;
+    timeAscetic: string;
+    resultAscetic: string;
+    completedDays: string[];
+    status: 'active' | 'failed' | 'completed' | 'planned';
+}
+let ascetics: Ascetic[] = [];
+// Загрузка данных пользователей из сервера Supabase  (Таблица данніх ascetics)
+// Загрузка аскез из Supabase
+async function loadAscetics() {
+
+    const { data, error } = await supabase
+        .from('ascetics')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Помилка завантаження аскез:', error);
+        alert('Не вдалося завантажити аскези. Спробуй оновити сторінку.');
+        return;
+    }
+
+    try {
+
+        // Расшифровываем все аскезы параллельно
+        const loadedAscetics: Ascetic[] = await Promise.all(
+            (data ?? []).map(async (row): Promise<Ascetic> => {
+
+                let asceticData;
+
+                if (row.encrypted_data) {
+
+                    const { data: decryptedData, error: decryptError } =
+                        await supabase.functions.invoke('smooth-worker', {
+                            body: {
+                                action: 'decrypt',
+                                id: row.id
+                            }
+                        });
+
+                    if (decryptError) throw decryptError;
+
+                    asceticData = decryptedData.data;
+
+                } else {
+
+                    // Поддержка старых незашифрованных записей
+                    asceticData = {
+                        name: row.name,
+                        duration: row.duration,
+                        expected_result: row.expected_result,
+                        completed_days: row.completed_days ?? [],
+                        status: row.status
+                    };
+                }
+
+                return {
+                    id: row.id,
+                    nameAscetic: asceticData.name,
+                    timeAscetic: asceticData.duration,
+                    resultAscetic: asceticData.expected_result,
+                    completedDays: asceticData.completed_days ?? [],
+                    status: asceticData.status
+                };
+
+            })
+        );
+
+        ascetics = loadedAscetics;
+
+        // Отрисовываем карточки после расшифровки
+        renderAscetics();
+
+    } catch (error) {
+
+        console.error('Помилка розшифрування аскез:', error);
+        alert('Не вдалося розшифрувати дані аскез.');
+
+    }
+}
+    // Создаём карточки
+    function renderAscetics() {   
+        saveAscetic.innerHTML = '';
+
+    const total = ascetics.length;
+    const heading = document.querySelector<HTMLElement>('#title');
+
+    if (heading) {
+    heading.textContent = `${translations[currentLanguage].saveAusterity} - ${total}`;
+    } 
+   ascetics.forEach((element: Ascetic, index: number) => {
+        if (!Array.isArray(element.completedDays)) {
+                element.completedDays = [];
+            }
+
+        const number = total - index;
+
+        const card = document.createElement('div');
+        card.classList.add('ascetic-card');
+        card.dataset.id = String(number);
+
+        const titleCard = document.createElement('h5');
+        titleCard.textContent =
+        currentLanguage === 'uk' ? `Аскеза №${number}` : currentLanguage === 'nl' ? `Askesis nr. ${number}` : `Austerity №${number}`;
+
+        const gotName = document.createElement('h2');
+        gotName.setAttribute('data-translate', 'gotName');
+
+        const gotRes = document.createElement('h2');
+        gotRes.setAttribute('data-translate', 'gotRes');
+
+        const duren = document.createElement('h2');
+        duren.setAttribute('data-translate', 'duren');
+
+        const name = document.createElement('h1');
+        const time = document.createElement('h1');
+        const result = document.createElement('h1');
+        const status = document.createElement('h4');      
+        gotName.textContent = translations[currentLanguage].gotName;
+        name.textContent = ` ${element.nameAscetic}`;
+        duren.textContent = translations[currentLanguage].duren;
+        time.textContent = element.timeAscetic;
+        gotRes.textContent = translations[currentLanguage].gotRes;
+        result.textContent = ` ${element.resultAscetic}`;
+        // Разбираем диапазон Flatpickr
+        let dates = element.timeAscetic.split(' to ');
+        let startDate = parseDate(dates[0]);
+        if (!startDate) {
+            return;
+        }
+        let endDate = dates[1] ? parseDate(dates[1]) : new Date(startDate);
+            if (!endDate) {
+                return;
+            }
+        startDate.setHours(0, 0, 0, 0);
+        endDate.setHours(0, 0, 0, 0);
+        // Проверяем корректность дат
+        if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime()) || endDate < startDate) {
+            card.append(name, time, result);
+            saveAscetic.append(card);
+            return;
+        }
+        checkAscetic(element, startDate, endDate);
+        // Статус
+        function updateStatus() {
+            status.className = '';
+            const language = currentLanguage;
+          if (element.status === 'failed') {
+            status.textContent = translations[language].statusFailed;
+            status.classList.add('status-failed');
+                } else if (element.status === 'completed') {
+            status.textContent = translations[language].statusCompleted;
+            status.classList.add('status-completed');
+                } else if (element.status === 'planned') {
+            status.textContent = translations[language].statusPlanned;
+            status.classList.add('status-active');
+                } else {
+            status.textContent = translations[language].statusActive;
+            status.classList.add('status-active');
+            }
+        }
+        // Прогресс        
+        let totalDays = Math.round((endDate.getTime() - startDate.getTime()) / 86400000) + 1;
+
+         const language = currentLanguage;
+        let progressTitle = document.createElement('h3');
+        progressTitle.textContent = translations[language].progressTitle;
+        let progressText = document.createElement('p');
+        let progressBar = document.createElement('progress');
+        progressBar.max = totalDays;
+
+        function updateProgress() {
+            let completed = element.completedDays.length;
+            progressBar.value = completed;
+            progressText.textContent =
+                `${completed} / ${totalDays} days (${Math.round(completed / totalDays * 100)}%)`;
+        }       
+        // Календарь
+        let calendarTitle = document.createElement('h3');
+        calendarTitle.textContent = translations[language].calendarTitle;
+        let calendar = document.createElement('div');
+        calendar.classList.add('ascetic-calendar');
+        let calendarFragment = document.createDocumentFragment();
+        let offset = (startDate.getDay() + 6) % 7;
+        for (let i = 0; i < offset; i++) {
+            let emptyDay = document.createElement('span');
+            emptyDay.classList.add('empty-day');
+           calendarFragment.append(emptyDay);
+        }
+        let today = getToday();
+        let completedDaysSet = new Set(element.completedDays);
+
+        for (let i = 0; i < totalDays; i++) {
+            let currentDate = new Date(startDate);
+            currentDate.setDate(startDate.getDate() + i);
+            let dateString = formatDate(currentDate);
+            let dayButton = document.createElement('button');
+            dayButton.type = 'button';
+            dayButton.textContent = String(currentDate.getDate());
+            dayButton.classList.add('calendar-day');
+            dayButton.title = dateString;
+
+            let isCompleted = completedDaysSet.has(dateString);
+            let isToday = currentDate.getTime() === today.getTime();
+            if (isCompleted) {
+                dayButton.classList.add('completed');
+            }
+            // Только сегодня можно поставить отметку.
+            // Прошлые и будущие дни заблокированы.
+            dayButton.disabled =
+                !isToday ||
+                element.status === 'failed' ||
+                element.status === 'completed';
+            dayButton.setAttribute(
+                'aria-pressed',
+                String(isCompleted)
+            );
+           dayButton.addEventListener('click', async () => {
+                // Повторная проверка непосредственно при клике
+                let actualToday = getToday();
+                if (currentDate.getTime() !== actualToday.getTime() || element.status === 'failed' || element.status === 'completed') {
+                    return;
+                }
+                let dayIndex = element.completedDays.indexOf(dateString);
+               if (dayIndex === -1) {
+                    element.completedDays.push(dateString);
+                } else {
+                    // Сегодняшнюю отметку можно снять до полуночи
+                    element.completedDays.splice(dayIndex, 1);
+                }
+              try {
+    const { data: encryptionData, error: encryptionError } =
+        await supabase.functions.invoke('smooth-worker', {
+            body: {
+                action: 'encrypt',
+                data: {
+                    name: element.nameAscetic,
+                    duration: element.timeAscetic,
+                    expected_result: element.resultAscetic,
+                    completed_days: element.completedDays,
+                    status: element.status
+                }
+            }
+        });
+
+    if (encryptionError) throw encryptionError;
+
+    const { error } = await supabase
+        .from('ascetics')
+        .update({
+            encrypted_data: encryptionData.encrypted_data
+        })
+        .eq('id', element.id);
+
+    if (error) throw error;
+
+} catch (error) {
+    console.error('Помилка збереження позначки:', error);
+    alert('Не вдалося зберегти позначку. Спробуй ще раз.');
+
+    if (dayIndex === -1) {
+        element.completedDays.pop();
+    } else {
+        element.completedDays.splice(dayIndex, 0, dateString);
+    }
+
+    return;
+}
+  renderAscetics();
+
+            });
+          calendarFragment.append(dayButton);
+        }
+
+        calendar.append(calendarFragment);
+        // Удаление карточки
+        let deleteButton = document.createElement('button');    
+        deleteButton.type = 'button';
+        deleteButton.classList.add('delete-button');
+        deleteButton.textContent = translations[language].deleteButton;        
+
+        deleteButton.addEventListener('click', async () => {
+    const confirmed = confirm('Ви справді хочете видалити  аскезу?');
+    if (!confirmed) {
+        return;
+    }
+    const { error } = await supabase
+        .from('ascetics')
+        .delete()
+        .eq('id', element.id);
+    if (error) {
+        console.error('Помилка видалення аскузи', error);
+        alert('Не вдалося видалити аскезу. Спробуй ще раз.');
+        return;
+    }
+    ascetics.splice(index, 1);
+    renderAscetics();
+});        
+const cardButtons = document.createElement('div');
+cardButtons.classList.add('card-buttons');
+cardButtons.append(deleteButton);
+       updateStatus();
+card.append(    
+titleCard,
+gotName,
+name,
+duren,
+time,
+gotRes,
+result,
+status,
+progressTitle,
+progressText,
+progressBar,
+calendarTitle,
+calendar,
+cardButtons,
+);
+   
+      saveAscetic.append(card);
+        updateProgress();
+    });
+}
+// Перерисовываем карточки и проверяем пропущенные дни
+let renderTimer: ReturnType<typeof setTimeout> | undefined;
+
+function checkAllAscetics() {
+    if (renderTimer) {
+        clearTimeout(renderTimer);
+    }
+
+    renderTimer = setTimeout(() => {
+        renderAscetics();
+        renderTimer = undefined;
+    }, 150);
+}
+
+void loadAscetics();
+
+// Планируем следующую проверку на местную полночь
+function scheduleMidnightCheck() {
+    let now = new Date();
+    let nextMidnight = new Date(now);
+    nextMidnight.setDate(nextMidnight.getDate() + 1);
+    nextMidnight.setHours(0, 0, 0, 0);
+    let delay = nextMidnight.getTime() - now.getTime();
+    setTimeout(() => {
+        checkAllAscetics();
+        scheduleMidnightCheck();
+    }, delay);
+}
+  window.addEventListener('languageChanged', () => {
+            updateLanguage();
+            renderAscetics();
+        });
+scheduleMidnightCheck();
+
+// Проверяем время, когда пользователь возвращается на вкладку
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        checkAllAscetics();
+    }
+});
+
+// Проверяем время, когда пользователь возвращается в окно
+window.addEventListener('focus', checkAllAscetics);
