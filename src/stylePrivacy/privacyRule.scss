@@ -16,7 +16,7 @@
         margin-top: 100px;
         background: vars.$bg-input;
         border-radius: 10px;
-        scrollbar-width: thin;
+        scrollbar-width: none;
         scrollbar-color: #3b2308 transparent;
         font-size: vars.$font-size-style ;
         font-weight: 500;
@@ -36,6 +36,8 @@
         @media(max-width: 600px) {
             height: 700px;
             margin-top: 5px;
+            
+            
         }
         .politic {   
              padding: 10px; 
@@ -46,10 +48,17 @@
             box-sizing: border-box;          
             transition: transform 0.5s ease;
             transform: translateX(0);
-            z-index: 2;             
+            z-index: 2;    
+                     
             h1 {
                 text-align: center;          
-            }       
+            }      
+            p {
+                width: 95%;
+            } 
+            li {
+                width: 95%;
+            }
         }
         .condit {    
             padding: 10px;
@@ -69,6 +78,12 @@
             h1 {
                 text-align: center;               
             }  
+            p {
+                width: 95%;
+            } 
+            li {
+                width: 95%;
+            }
                        
         }    
     }
