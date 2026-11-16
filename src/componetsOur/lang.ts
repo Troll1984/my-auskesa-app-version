@@ -1,6 +1,8 @@
 import sound3 from '../assets/sound/sound-3.mp3';
 export const translations = {
   uk: {  
+   
+   savetempletes: 'Мої Аскези',
    Develop: 'Розробник My Askesa',  
    return: 'Назад', 
    contacts: 'Контакти', 
@@ -53,7 +55,8 @@ export const translations = {
    saveAusterity: 'Збережені аскези',
    templateDays: 'днів', templateGoal: 'Мета:', templateChoose: 'Обрати',
   },
-  en: {  
+  en: { 
+    savetempletes: 'My Ascetic Practices', 
     Develop: 'Developer My Askesa',  
     return: 'Back',
     contacts: 'Contact', 
@@ -107,7 +110,7 @@ export const translations = {
     templateDays: 'days', templateGoal: 'Goal:', templateChoose: 'Choose',
   },
   nl: {
-  Develop: 'Ontwikkelaar My Askesa', return: 'Terug', contacts: 'Contact',  
+  savetempletes: 'Mijn ascesepraktijken', Develop: 'Ontwikkelaar My Askesa', return: 'Terug', contacts: 'Contact',  
   templetes: 'Ascese-sjablonen',  Subscrip: 'Abonnementen & Extra functies', 
   comment: 'Reacties', aboutapp: 'Over app', menu: 'Menu',  politics: 'Privacy & Regels', 
   MyAccount:  'Mijn account', titleAscetic: 'Mijn Askesis', Description: 'Beschrijving', Duration: 'Duur', 
