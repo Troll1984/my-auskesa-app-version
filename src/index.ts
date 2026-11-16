@@ -46,6 +46,9 @@ politics?.addEventListener('click', () => {
 const aboutApp = document.querySelector<HTMLTextAreaElement>('#about-app');
 aboutApp?.addEventListener('click', () => {
     window.location.href = './about.html';
-})
+});
+
+
+
 
  

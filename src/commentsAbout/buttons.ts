@@ -1,5 +1,5 @@
 
-
+import sound4 from '../assets/sound/sound-4.mp3';
 const btnApp = document.querySelector<HTMLButtonElement>('.btn-app');
 const btnComments = document.querySelector<HTMLButtonElement>('.btn-comments');
 const temple = document.querySelector<HTMLButtonElement>('.temple');
@@ -9,14 +9,19 @@ const infoBlock = document.querySelector<HTMLElement>('.info-block');
 const comments = document.querySelector<HTMLElement>('.comments');
 const back = document.querySelectorAll<HTMLElement>('.back');
 const blockMenu = document.querySelector<HTMLElement>('.block-menu');
+//Звуки
+const backSound = new Audio(sound4);
+backSound.volume = 0.9;
 //Про додаток
 btnApp?.addEventListener('click', () => {
     if(!infoBlock || !blockMenu) return      
     infoBlock.style.display = 'flex';
-    blockMenu.style.display = 'none';
+    blockMenu.style.display = 'none'; 
 })
 //Назад
 back?.forEach((btn) => {
+    backSound.currentTime = 0;
+    backSound.play();
     btn.addEventListener('click', () => {
         window.location.href = './about.html'; 
     })
@@ -33,6 +38,12 @@ temple?.addEventListener('click', () => {
 })
 // Назад общая
 returned?.addEventListener('click', () => {
-    window.location.href = './index.html';
+    backSound.currentTime = 0;
+    backSound.play();
+
+    backSound.onended = () => {
+        window.location.href = './index.html';
+    };   
+   
 })
  
