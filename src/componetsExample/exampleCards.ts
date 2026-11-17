@@ -1,4 +1,4 @@
-import sound4 from '../assets/sound/sound-4.mp3';
+
 const template = document.querySelector<HTMLElement>('#template');
 const sectionOne = document.querySelector<HTMLElement>('.section-one');
 const cardAscetic = document.querySelector<HTMLElement>('.card-ascetic');
@@ -8,8 +8,7 @@ const btnClose1 = document.querySelector<HTMLElement>('.btn1');
 const infoButton = document.querySelector<HTMLElement>('#info');
 const infoSection = document.querySelector<HTMLElement>('.info');
 const imgBackground = document.querySelector<HTMLElement>('.img-background');
-const backSound = new Audio(sound4);
- backSound.volume = 0.9; 
+ 
 
 
 
@@ -38,30 +37,17 @@ if (new URLSearchParams(window.location.search).has('showTemplates')) {
 }
 
 btnClose?.addEventListener('click', () => {
-    backSound.currentTime = 0;
-
     const params = new URLSearchParams(window.location.search);
-    const from = params.get('from');
-
-    backSound.onended = () => {
+    const from = params.get('from');   
         if (from === 'buttons') {
             window.location.href = './about.html';
         } else {
            window.location.href = './example.html';
-        }
-    };
-
-    backSound.play().catch(() => {
-        if (from === 'buttons') {
-            window.location.href = './about.html';
-        } else {
-            window.location.href = './example.html';
-        }
+        }  
+      
     });
-});
-btnClose1?.addEventListener('click', () => {
-    backSound.currentTime = 0;
-    backSound.play();
+
+btnClose1?.addEventListener('click', () => {   
     if(!template || !sectionOne || !cardAscetic || !header || !imgBackground ) return;
     sectionOne.style.display = 'none';
     cardAscetic.style.display = 'none';

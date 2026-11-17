@@ -1,4 +1,4 @@
-import sound4 from '../assets/sound/sound-4.mp3';
+
 import { getElement } from '../componetsOur/dom';
 import { supabase } from '../supabase';
 import { getToday, parseDate, formatDate, checkAscetic, } from './verificationAsceses';
@@ -7,30 +7,16 @@ import './slider';
 
 // Кнопка назад
 const back = getElement('.btn');
-const backSound = new Audio(sound4);
-backSound.volume = 0.9;
+
 
 back.addEventListener('click', () => {
-    backSound.currentTime = 0;
-
     const params = new URLSearchParams(window.location.search);
-    const from = params.get('from');
-
-    backSound.onended = () => {
+    const from = params.get('from');   
         if (from === 'buttons') {
             window.location.href = './about.html';
         } else {
             window.location.href = './index.html';
-        }
-    };
-
-    backSound.play().catch(() => {
-        if (from === 'buttons') {
-            window.location.href = './about.html';
-        } else {
-            window.location.href = './index.html';
-        }
-    });
+        }   
 });
 
 //Обозначения типа для Ts

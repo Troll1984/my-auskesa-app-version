@@ -1,4 +1,4 @@
-import sound4 from './assets/sound/sound-4.mp3';
+
 import sound2 from './assets/sound/sound-2.mp3';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './privacy.scss';
@@ -11,9 +11,8 @@ const buttonArrowLeft = document.querySelector<HTMLButtonElement>('.button-arrow
 const back = document.querySelector<HTMLButtonElement>('.back');
 // Аудио звук
 const clickSound = new Audio(sound2);
-const backSound = new Audio(sound4);
 clickSound.volume = 0.5;
-backSound.volume = 0.9; 
+
 
 buttonArrowRight?.addEventListener('click', () => {
     clickSound.currentTime = 0;
@@ -26,12 +25,8 @@ buttonArrowLeft?.addEventListener('click', () => {
     clickSound.play();
     condit?.classList.remove('slide');
     politic?.classList.remove('slide');})
-back?.addEventListener('click', () => {  
-    backSound.currentTime = 0;
-    backSound.play();
-     backSound.onended = () => {
-        window.location.href = './index.html';
-    };    
+back?.addEventListener('click', () => {      
+        window.location.href = './index.html';       
 });
 document.documentElement.classList.add('no-animation');
 requestAnimationFrame(() => {

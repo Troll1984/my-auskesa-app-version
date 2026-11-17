@@ -97,10 +97,7 @@
             height: 175px;
             border-radius: 15px;
             border: 1px solid #422b0d;
-            transition: transform 500ms ease;                     
-            &:hover {
-                transform: scale(1.05);
-            }
+            transition: transform 500ms ease;        
         }
     }   
     .title-icon {

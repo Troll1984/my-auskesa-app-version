@@ -25,17 +25,12 @@ btnApp?.addEventListener('click', () => {
 })
 //Назад
 back?.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        backSound.currentTime = 0;
-        backSound.play().then(() => {
-            backSound.onended = () => {
-                window.location.href = './about.html';
-            };
-        }).catch(() => {
-            window.location.href = './about.html';
-        });
+    btn.addEventListener('click', () => {      
+        window.location.href = './about.html';
+          
+        })
     });
-});
+
 //Коменти
 btnComments?.addEventListener('click', () => {
     if(!comments || !blockMenu) return;
@@ -48,15 +43,7 @@ temple?.addEventListener('click', () => {
 })
 // Назад общая
 returned?.addEventListener('click', () => {
-    backSound.currentTime = 0;
-
-    backSound.onended = () => {
-        window.location.href = './index.html';
-    };
-
-    backSound.play().catch(() => {
-        window.location.href = './index.html';
-    });
+        window.location.href = './index.html';   
 });
 
 const savetemple = document.querySelector<HTMLElement>('.savetemple');
