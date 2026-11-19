@@ -16,14 +16,13 @@ function renderTemplates(): void {
       <div class="image"> <img  src="${template.img}" alt="logo"></div>
       <h3>${currentLanguage === 'uk' ? template.title : currentLanguage === 'nl' ? template.titleNl : template.titleEn}</h3>
      <div class="title-icon">
-  <button class="template-calendar" type="button"
-    data-template-id="${template.id}">
-    <i class="fa-regular fa-calendar"></i>
-  </button>
+        <button class="template-calendar" type="button" data-template-id="${template.id}">
+          <i class="fa-regular fa-calendar"></i>
+        </button>
 
-      <span class="template-duration">
-        ${selectedDurations.get(template.id) ?? template.durationDays} ${t.templateDays}
-      </span>
+        <span class="template-duration">
+             ${selectedDurations.get(template.id) ?? template.durationDays} ${t.templateDays}
+        </span>
     </div>
 
       <div class="duration-popup" data-popup-id="${template.id}" hidden>

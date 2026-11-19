@@ -33,8 +33,15 @@
   box-sizing: border-box;
   scrollbar-width: none;   
   scrollbar-color:  vars.$scrollbar-color; 
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  touch-action: pan-x;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @media(max-width: 600px) {
-       overflow: hidden;
+       overflow-x: auto;
+       padding: 0 5px;
     }  
     .template-grid {
     display: flex;
@@ -43,24 +50,10 @@
     gap: 10px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth; 
-    @media(max-width: 600px) {
-        width: 100%;        
-        padding: 5px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-       
-        &::-webkit-scrollbar {
-        display: none;
-        }
-    }
         .template-card {
             flex: 0 0 300px;  
             width: 300px;  
-            height:500px;
+            height:550px;
             scroll-snap-align: start;
             background: vars.$bg-template1;
             border: 1px solid #473014;
@@ -71,9 +64,9 @@
             box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
             @media(max-width: 600px) {
                 box-sizing: border-box;
-                flex: 0 0 100%;
-                width: 100%;
-                scroll-snap-align: center;
+                flex: 0 0 calc(100vw - 50px);
+                width: calc(100vw - 50px);
+                scroll-snap-align: start;
                  scroll-snap-stop: always;
                  
                 }      
@@ -104,7 +97,8 @@
         display: flex;
         align-items: center;
         gap: 5px; 
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
         .template-icon {
             font-size: 1.5rem;
             @media(max-width: 600px) {
@@ -168,15 +162,29 @@ hr {
              top: 30px;       
         }
      @media(max-width:600px) {
-        display: none;
+        width: 100%;
+        left: 0%;
+        top: 78px;
+        
      }
     #left,
     #right {
-        padding: 15px;
+        padding: 10px;
         background: hsla(33, 18%, 90%, 0.225);
         color: #fff;
         border: none; 
-        border-radius: 10px;               
+        border-radius: 10px;  
+        @media(max-width:600px) {
+            width: 40px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            background: hsla(33, 18%, 90%, 0.225);
+            font-size: 1.0rem;
+
+        }             
     }     
 }
 

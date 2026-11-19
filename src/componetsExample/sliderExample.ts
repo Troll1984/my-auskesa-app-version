@@ -10,14 +10,20 @@ clickSound1.volume = 0.5;
 function scrollByCard(direction: -1 | 1): void {
   if (!slider) return;
 
-  const card = slider.querySelector<HTMLElement>('.template-card');
-  if (!card) return;
+  const cards = Array.from(slider.querySelectorAll<HTMLElement>('.template-card'));
+  if (!cards.length) return;
 
-  const gap = parseFloat(getComputedStyle(slider).gap) || 0;
-  const step = card.getBoundingClientRect().width + gap;
+  const sliderLeft = slider.getBoundingClientRect().left + slider.clientLeft;
+  const currentIndex = cards.reduce((closestIndex, card, index) => {
+    const closestDistance = Math.abs(cards[closestIndex].getBoundingClientRect().left - sliderLeft);
+    const distance = Math.abs(card.getBoundingClientRect().left - sliderLeft);
+    return distance < closestDistance ? index : closestIndex;
+  }, 0);
+  const targetIndex = Math.max(0, Math.min(cards.length - 1, currentIndex + direction));
+  const targetLeft = slider.scrollLeft + cards[targetIndex].getBoundingClientRect().left - sliderLeft;
 
-  slider.scrollBy({
-    left: direction * step,
+  slider.scrollTo({
+    left: targetLeft,
     behavior: 'smooth',
   });
 }

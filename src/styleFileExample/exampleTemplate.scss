@@ -1,19 +1,21 @@
 
 
-.template-duration {
-    background: none;
-    padding: 7px;
+.template-duration {   
+    background: none;   
+    padding: 8px;
     border-radius: 7px;
+    font-size: 1rem;
     box-shadow: -1px 0px 17px 1px rgba(0,0,0,0.75);
 }
 .template-calendar {
-    padding: 7px;
+    width: 35px;
+    height: 35px;
     border-radius: 8px;
     background: none;
     box-shadow: -1px 0px 17px 1px rgba(0,0,0,0.75);
     border: none;
-    color: #cec7c7;
-    margin-right: 3px;
+    color: #cec7c7;   
+    font-size: 1.2rem;
 }
 .duration-popup {
     width: 90%;    
