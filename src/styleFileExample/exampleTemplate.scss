@@ -37,3 +37,39 @@
          
     }
 }
+
+.titler {
+    display: block;
+    width: 100%;
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.duration-titler {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: -1px 0 17px 1px rgba(0, 0, 0, 0.75);
+    &[hidden] {
+        display: none;
+    }
+    .titler-option {
+        padding: 6px 10px;
+        color: #fff;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 7px;
+        cursor: pointer;
+
+        &.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+    }
+}
