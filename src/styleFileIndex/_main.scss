@@ -1,12 +1,9 @@
 @use '../styleFileOur/variables' as vars;
 .blockForm {
-    margin-top: 10px;
+    margin-top: 10px;    
     @media(max-width: 1200px) {
-        margin-top: 5px;        
-    }
-     @media(max-width: 800px) {
-         margin-top: 10px;
-     }
+        margin-top: 50px;        
+    }    
     @media(max-width: 600px) {
         margin-top: 10px;
     }
@@ -21,13 +18,9 @@ form {
     margin: 0 auto;
     font-size: 2rem;
     @media(max-width: 1200px) {
-        margin-top: 10px;
-        gap: 10px;
-    }
-    @media(max-width: 800px) {
-        margin-top: 10px;
-        gap: 10px
-    }
+        margin-top: 30px;
+        gap: 20px;
+    }    
     @media(max-width: 600px) {
         width: 100%;  
          gap: 20px ;  
