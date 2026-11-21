@@ -1,7 +1,6 @@
-import { asceticTemplates } from './templateAscesa';
+import { asceticTemplates, templateSections } from './templateAscesa';
 import { currentLanguage, translations } from '../componetsOur/lang';
 import { supabase } from '../supabase';
-import { templateSections } from './templateSections';
 
 const selectedDurations = new Map<string, number>();
 const durationOptions = [7, 14, 21, 30, 90];
@@ -15,6 +14,8 @@ function renderTemplates(): void {
   const t = translations[currentLanguage];
   const localizedTitle = (template: typeof asceticTemplates[number]) =>
     currentLanguage === 'uk' ? template.title : currentLanguage === 'nl' ? template.titleNl : template.titleEn;
+  const localizedSectionTitle = (title: [string, string, string]) =>
+    currentLanguage === 'uk' ? title[0] : currentLanguage === 'nl' ? title[2] : title[1];
   templateGrid.innerHTML = templateSections.map((section) => {
     const template = asceticTemplates.find(item => item.id === section.id);
     if (!template) return '';
@@ -25,13 +26,16 @@ function renderTemplates(): void {
     const selectedTitleTemplate = sectionOptions.find(item => item.id === selectedTitleId) ?? template;
     return `
     <article class="template-card">
-      <div class="image"> <img src="${section.image}" alt="${localizedTitle(template)}"></div>
+      <h2 class="template-section-title">
+        ${localizedSectionTitle(section.title)}
+        <button class="section-menu" type="button" data-btn-id="${template.id}" aria-label="${currentLanguage === 'uk' ? 'Обрати категорію' : currentLanguage === 'nl' ? 'Categorie kiezen' : 'Choose category'}" aria-expanded="false">
+          <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+        </button>
+      </h2>
+      <div class="image"> <img src="${selectedTitleTemplate.img}" alt="${localizedTitle(selectedTitleTemplate)}"></div>
 
 
-      <button class="titler" type="button" data-btn-id="${template.id}">
-      
-      <h3>${localizedTitle(selectedTitleTemplate)}</h3><i class="fa-solid fa-sliders"></i>
-      </button>
+      <h3 class="template-selected-title">${localizedTitle(selectedTitleTemplate)}</h3>
       <div class="duration-titler" data-titler-id="${template.id}" hidden>
         ${sectionOptions.map(titleTemplate => `
          <button
@@ -86,11 +90,14 @@ if (templateGrid) {
   templateGrid.addEventListener('click', async (event) => {
     if (!(event.target instanceof Element)) return;
 
-    const titleButton = event.target.closest<HTMLButtonElement>('.titler');
-    if (titleButton) {
-      const templateId = titleButton.dataset.btnId;
+    const sectionMenu = event.target.closest<HTMLButtonElement>('.section-menu');
+    if (sectionMenu) {
+      const templateId = sectionMenu.dataset.btnId;
       const popup = templateGrid.querySelector<HTMLElement>(`.duration-titler[data-titler-id="${templateId}"]`);
-      if (popup) popup.hidden = !popup.hidden;
+      if (popup) {
+        popup.hidden = !popup.hidden;
+        sectionMenu.setAttribute('aria-expanded', String(!popup.hidden));
+      }
       return;
     }
 
@@ -103,7 +110,13 @@ if (templateGrid) {
       selectedDurations.delete(templateId);
       const card = titleOption.closest('.template-card');
       const titleTemplate = asceticTemplates.find(item => item.id === titleTemplateId);
-      const heading = card?.querySelector('.titler h3');
+      const categoryImage = card?.querySelector<HTMLImageElement>('.image img');
+      if (categoryImage && titleTemplate) {
+        categoryImage.src = titleTemplate.img;
+        categoryImage.alt = currentLanguage === 'uk' ? titleTemplate.title
+          : currentLanguage === 'nl' ? titleTemplate.titleNl : titleTemplate.titleEn;
+      }
+      const heading = card?.querySelector('.template-selected-title');
       if (heading && titleTemplate) {
         heading.textContent = currentLanguage === 'uk' ? titleTemplate.title
           : currentLanguage === 'nl' ? titleTemplate.titleNl : titleTemplate.titleEn;
@@ -129,6 +142,7 @@ if (templateGrid) {
         option.classList.toggle('active', (option as HTMLButtonElement).dataset.titleTemplateId === titleTemplateId);
       });
       card?.querySelector<HTMLElement>('.duration-titler')?.setAttribute('hidden', '');
+      card?.querySelector<HTMLButtonElement>('.section-menu')?.setAttribute('aria-expanded', 'false');
       return;
     }
 
