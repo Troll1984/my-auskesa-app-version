@@ -1,5 +1,5 @@
 
-
+@use '../styleFileOur/variables' as vars;
 .template-duration {   
     background: none;   
     padding: 8px;
@@ -7,7 +7,7 @@
     font-size: 1rem;
     box-shadow: -1px 0px 17px 1px rgba(0,0,0,0.75);
 }
-.template-calendar {
+.template-calendar {    
     width: 35px;
     height: 35px;
     border-radius: 8px;
@@ -18,12 +18,15 @@
     font-size: 1.2rem;
 }
 .duration-popup {
+    position: absolute;
+    top: 370px;
     width: 90%;    
-    width: auto;      
-    background: none;
+    height:auto;      
+    background: vars.$bg-template1;
     box-shadow: -1px 0px 17px 1px rgba(0,0,0,0.75);
     padding: 10px;
     border-radius: 8px;
+    
     .duration-option  {
         background: none;
         box-shadow: -1px 0px 17px 1px rgba(0,0,0,0.75);
@@ -49,18 +52,28 @@
 }
 
 .duration-titler {
+    position: absolute;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;   
+    background: vars.$bg-template1; 
     gap: 10px;
-    height: 750px;
-    margin: 8px 0;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    overflow-y: auto;
+    height: 270px;       
     padding: 15px;
     border-radius: 8px;
     box-shadow: -1px 0 17px 1px rgba(0, 0, 0, 0.75);
     overflow-y: auto;
-    z-index: 5;
+    z-index: 5;    
     @media(max-width: 600px){
+         width: 100%;
+         top: 50px;
+         left: 0;
         overflow-y: auto;
+        
+        
         
     }
     &[hidden] {

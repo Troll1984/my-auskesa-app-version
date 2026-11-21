@@ -5,7 +5,7 @@ if (about) {
   const ukrainianHtml = about.innerHTML;
   const englishHtml = `
     <h2>What is austerity?</h2>
-    <p>Austerity is a voluntary commitment you make to yourself to build self-discipline, develop healthy habits, and reach personal goals. For a set period, you consciously give up a habit or add a useful action to your life. The aim is to manage your actions, focus on what matters, and keep moving towards the result you want.</p>
+    <p> Askesis is a voluntary commitment you make to yourself to build self-discipline, develop healthy habits, and reach personal goals. For a set period, you consciously give up a habit or add a useful action to your life. The aim is to manage your actions, focus on what matters, and keep moving towards the result you want.</p>
     <h2>How does it work?</h2>
     <ul class="list">
       <li><h4>Focus and discipline.</h4><p>You learn to choose your actions deliberately instead of following habits automatically. This helps you give more attention to your priorities.</p></li>
@@ -72,12 +72,12 @@ if (politic) {
       const englishHtml = `<div>
       <div class="button"><button class="button-arrow-right"><i class="fa-solid fa-right-long"></i></button></div>  
     <h1>Privacy Policy</h1>
-    <h3>My Ascesa</h3>
+    <h3>My Askesis</h3>
     <p>Last updated: 08.11.2026</p>
 
     <ul class="listGen">
       <li>General Provisions
-        <p>"My Askesa" - is an application for creating, planning, and tracking personal askesis, habits, and goals.
+        <p>"My Askesis" - is an application for creating, planning, and tracking personal askesis, habits, and goals.
           We respect users' privacy and strive to ensure the proper protection of their personal data.
           By using My Askesis, you agree to the terms of this Privacy Policy.</p>
       </li>
@@ -292,7 +292,7 @@ if(infoBlock) {
 
   const englishHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
-    <h2>About My Askesa</h2>
+    <h2>About My Askesis</h2>
     <p>My Askesis is an independent project created by one person with the desire to make something useful for others.
     This app is the result of personal effort, learning, ideas, and a strong desire to develop a product that helps people 
     improve themselves, build healthy habits, and achieve their goals.
@@ -301,7 +301,7 @@ if(infoBlock) {
 
   const dutchHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
-    <h2>Over My Askesa</h2>
+    <h2>Over My Askesis</h2>
     <p>My Askesis is een onafhankelijk project dat door één persoon is opgezet met de wens om iets nuttigs voor anderen te creëren.
     Deze app is het resultaat van eigen inspanningen, leerervaringen, ideeën en een grote motivatie om een product te ontwikkelen dat 
     mensen helpt zichzelf te verbeteren, goede gewoontes aan te leren en hun doelen te bereiken.
