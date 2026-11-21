@@ -8,12 +8,12 @@ const btnClose1 = document.querySelector<HTMLElement>('.btn1');
 const infoButton = document.querySelector<HTMLElement>('#info');
 const infoSection = document.querySelector<HTMLElement>('.info');
 const imgBackground = document.querySelector<HTMLElement>('.img-background');
- 
+ const bottomNavigation = document.querySelector<HTMLElement>('.bottom-navigation');
 
 
 
 infoButton?.addEventListener('click', () => {
-  if (!infoSection || !imgBackground || !btnClose1 || !sectionOne || !cardAscetic ) {
+  if (!infoSection || !imgBackground || !btnClose1 || !sectionOne || !cardAscetic || !bottomNavigation ) {
     console.log({ infoSection, imgBackground });
     return;
   }
@@ -22,14 +22,16 @@ infoButton?.addEventListener('click', () => {
   infoSection.style.display = 'block';
   imgBackground.style.display = 'none';
   btnClose1.style.display = 'block'; 
+  bottomNavigation.style.display = 'none';
 });
 
 template?.addEventListener('click', () => {
-    if(!template || !sectionOne || !cardAscetic || !header || !btnClose ) return;
+    if(!template || !sectionOne || !cardAscetic || !header || !btnClose || !bottomNavigation ) return;
     sectionOne.style.display = 'none';
     cardAscetic.style.display = 'block';
     header.style.display = 'none';
-    btnClose.style.display = 'block';    
+    btnClose.style.display = 'block';   
+    bottomNavigation.style.display = 'none'; 
 });
 
 if (new URLSearchParams(window.location.search).has('showTemplates')) {
@@ -48,11 +50,13 @@ btnClose?.addEventListener('click', () => {
     });
 
 btnClose1?.addEventListener('click', () => {   
-    if(!template || !sectionOne || !cardAscetic || !header || !imgBackground ) return;
+    if(!template || !sectionOne || !cardAscetic || !header || !imgBackground || !bottomNavigation ) return;
     sectionOne.style.display = 'none';
     cardAscetic.style.display = 'none';
     header.style.display = 'flex';
-    imgBackground.style.display = 'block';         
+    imgBackground.style.display = 'block'; 
+    bottomNavigation.style.display = 'flex';
+            
 })
 
 // Отправляет шаблоны в форму при нажатии на кнопки

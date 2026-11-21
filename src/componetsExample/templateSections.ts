@@ -1,4 +1,4 @@
-import { asceticTemplates } from '../componetsIndex/templateAscesa';
+import { asceticTemplates } from './templateAscesa';
 
 /**
  * Each entry is a card section. Edit `optionIds` to choose which templates

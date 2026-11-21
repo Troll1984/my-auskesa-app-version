@@ -21,25 +21,21 @@
         font-size: vars.$font-size-style ;
         font-weight: 500;
         padding: 0px;
-        @media(max-width: 1400px) {
+        @media(max-width: 1300px) {
             height: 700px;
             margin-top: 30px;
         }
-        @media(max-width: 1200px) {
-            height: 1250px;
+        @media(max-width: 1150px) {
+            height: 1200px;
             margin-top: 10px;
         }
         @media(max-width: 800px) {
-            height: 900px;           
+            height: 900px;
         }
         @media(max-width: 600px) {
-            height: 800px;
+            height: 700px;
             margin-top: 5px;      
-        }
-        @media(max-width: 380px) {
-           height: 700px;
-           margin-top: 5px;      
-        }
+        }       
         .politic {   
              padding: 10px; 
            display: flex;

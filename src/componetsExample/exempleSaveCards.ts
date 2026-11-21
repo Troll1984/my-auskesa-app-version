@@ -1,4 +1,4 @@
-import { asceticTemplates } from '../componetsIndex/templateAscesa';
+import { asceticTemplates } from './templateAscesa';
 import { currentLanguage, translations } from '../componetsOur/lang';
 import { supabase } from '../supabase';
 import { templateSections } from './templateSections';
@@ -30,7 +30,7 @@ function renderTemplates(): void {
 
       <button class="titler" type="button" data-btn-id="${template.id}">
       
-      <h3>${localizedTitle(selectedTitleTemplate)}</h3>
+      <h3>${localizedTitle(selectedTitleTemplate)}</h3><i class="fa-solid fa-sliders"></i>
       </button>
       <div class="duration-titler" data-titler-id="${template.id}" hidden>
         ${sectionOptions.map(titleTemplate => `

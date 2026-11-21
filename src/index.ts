@@ -1,7 +1,7 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './style.scss'
 import { datePicker } from './componetsIndex/calendar';
-import { asceticTemplates, templateStorageKey } from './componetsIndex/templateAscesa';
+import { asceticTemplates, templateStorageKey } from './componetsExample/templateAscesa';
 import { currentLanguage } from './componetsOur/lang';
 import './componetsIndex/saveAscetic';
 import './componetsIndex/auth'; 
