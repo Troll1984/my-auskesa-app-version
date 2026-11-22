@@ -6,25 +6,32 @@ import './componetsOur/aboutLanguage';
 
 const politic = document.querySelector<HTMLElement>('.politic');
 const condit = document.querySelector<HTMLElement>('.condit');
-const buttonArrowRight = document.querySelector<HTMLButtonElement>('.button-arrow-right');
-const buttonArrowLeft = document.querySelector<HTMLButtonElement>('.button-arrow-left');
+const policyWrapper = document.querySelector<HTMLElement>('.wrapper-politic');
+const policyPageCount = document.querySelector<HTMLElement>('.policy-page-count');
 const back = document.querySelector<HTMLButtonElement>('.back');
 // Аудио звук
 const clickSound = new Audio(sound2);
 clickSound.volume = 0.5;
 
 
-buttonArrowRight?.addEventListener('click', () => {
+const showPolicyPage = (page: 1 | 2) => {
+    if (!politic || !condit || !policyPageCount) return;
+    politic.classList.toggle('slide', page === 2);
+    condit.classList.toggle('slide', page === 2);
+    policyPageCount.textContent = `${page} / 2`;
+    policyWrapper?.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+policyWrapper?.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const arrow = target.closest<HTMLButtonElement>('.button-arrow-right, .button-arrow-left');
+    if (!arrow) return;
+
     clickSound.currentTime = 0;
-    clickSound.play();
-    condit?.classList.add('slide');
-    politic?.classList.add('slide');
-})
-buttonArrowLeft?.addEventListener('click', () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-    condit?.classList.remove('slide');
-    politic?.classList.remove('slide');})
+    void clickSound.play().catch(() => undefined);
+    showPolicyPage(arrow.classList.contains('button-arrow-right') ? 2 : 1);
+});
 back?.addEventListener('click', () => {      
         window.location.href = './index.html';       
 });

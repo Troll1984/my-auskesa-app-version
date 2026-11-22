@@ -1,6 +1,7 @@
 import sound3 from '../assets/sound/sound-3.mp3';
 export const translations = {
   uk: {  
+   btnVideo: 'Навчальне відео ',
    Support: 'Підтримати проєкт',
    savetempletes: 'Мої Аскези',
    Develop: 'Розробник My Askesa',  
@@ -56,6 +57,7 @@ export const translations = {
    templateDays: 'днів', templateGoal: 'Мета:', templateChoose: 'Обрати', templateIntent: 'Я беру аскезу на:',
   },
   en: { 
+    btnVideo: 'Educational video ',
     Support: 'Support Project',
     savetempletes: 'My Askesis Practices', 
     Develop: 'Developer My Askesis',  
@@ -111,7 +113,7 @@ export const translations = {
     templateDays: 'days', templateGoal: 'Goal:', templateChoose: 'Choose', templateIntent: 'I commit to:',
   },
   nl: {
-    Support: 'Steun project',
+    Support: 'Steun project',  btnVideo: 'Educatieve video ',
   savetempletes: 'Mijn ascesepraktijken', Develop: 'Ontwikkelaar My Askesa', return: 'Terug', contacts: 'Contact',  
   templetes: 'Ascese-sjablonen',  Subscrip: 'Abonnementen & Extra functies', 
   comment: 'Reacties', aboutapp: 'Over app', menu: 'Menu',  politics: 'Privacy & Regels', 

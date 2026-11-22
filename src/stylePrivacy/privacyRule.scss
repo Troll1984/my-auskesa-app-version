@@ -20,7 +20,7 @@
         scrollbar-color: #3b2308 transparent;
         font-size: vars.$font-size-style ;
         font-weight: 500;
-        padding: 0px;
+        padding: 0 0 48px;
         @media(max-width: 1300px) {
             height: 700px;
             margin-top: 30px;
@@ -35,11 +35,17 @@
         @media(max-width: 600px) {
             height: 700px;
             margin-top: 5px;      
-        }       
+        }    
+        .pol-info {
+             > p {
+                text-align: center;
+                width: 95%;
+            } 
+        }   
         .politic {   
-             padding: 10px; 
-           display: flex;
-           flex-direction: column;  
+            padding: 10px; 
+            display: flex;
+            flex-direction: column;  
             position: relative;
             width: 100%;      
             box-sizing: border-box;          
@@ -48,9 +54,11 @@
             z-index: 2;    
                      
             h1 {
+                font-size: 1.5rem;
                 text-align: center;          
             }      
-            p {
+             p {
+                
                 width: 95%;
             } 
             li {
@@ -73,6 +81,7 @@
                 
             }
             h1 {
+                 font-size: 1.5rem;
                 text-align: center;               
             }  
             p {
@@ -84,6 +93,19 @@
                        
         }    
     }
+ 
+
+.policy-page-count { 
+    position: absolute;
+    top: 10px;    
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: hsla(0, 8%, 75%, 0.179);
+    font-size: 14px;
+}
 
 .listGen {
     > li {

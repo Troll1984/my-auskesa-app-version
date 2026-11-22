@@ -1,4 +1,6 @@
 
+import sound2 from '../assets/sound/sound-2.mp3';
+
 const template = document.querySelector<HTMLElement>('#template');
 const sectionOne = document.querySelector<HTMLElement>('.section-one');
 const cardAscetic = document.querySelector<HTMLElement>('.card-ascetic');
@@ -7,8 +9,23 @@ const btnClose = document.querySelector<HTMLElement>('.btn');
 const btnClose1 = document.querySelector<HTMLElement>('.btn1');
 const infoButton = document.querySelector<HTMLElement>('#info');
 const infoSection = document.querySelector<HTMLElement>('.info');
+const infoPages = document.querySelector<HTMLElement>('.info-pages');
+const infoPageCount = document.querySelector<HTMLElement>('.info-page-count');
+const infoPagePrev = document.querySelector<HTMLButtonElement>('.info-page-prev');
+const infoPageNext = document.querySelector<HTMLButtonElement>('.info-page-next');
 const imgBackground = document.querySelector<HTMLElement>('.img-background');
  const bottomNavigation = document.querySelector<HTMLElement>('.bottom-navigation');
+const pageTurnSound = new Audio(sound2);
+pageTurnSound.volume = 0.5;
+
+const setInfoPage = (page: 1 | 2) => {
+  if (!infoPages || !infoPageCount || !infoPagePrev || !infoPageNext || !infoSection) return;
+  infoPages.classList.toggle('show-second-page', page === 2);
+  infoPageCount.textContent = `${page} / 2`;
+  infoPagePrev.disabled = page === 1;
+  infoPageNext.disabled = page === 2;
+  infoSection.scrollTop = 0;
+};
 
 
 
@@ -18,6 +35,7 @@ infoButton?.addEventListener('click', () => {
     return;
   }
   sectionOne.style.display = 'block';
+  setInfoPage(1);
   cardAscetic.style.display = 'none';
   infoSection.style.display = 'block';
   imgBackground.style.display = 'none';
@@ -25,9 +43,24 @@ infoButton?.addEventListener('click', () => {
   bottomNavigation.style.display = 'none';
 });
 
+const playPageTurnSound = () => {
+  pageTurnSound.currentTime = 0;
+  void pageTurnSound.play().catch(() => undefined);
+};
+
+infoPagePrev?.addEventListener('click', () => {
+  playPageTurnSound();
+  setInfoPage(1);
+});
+infoPageNext?.addEventListener('click', () => {
+  playPageTurnSound();
+  setInfoPage(2);
+});
+
 template?.addEventListener('click', () => {
     if(!template || !sectionOne || !cardAscetic || !header || !btnClose || !bottomNavigation ) return;
     sectionOne.style.display = 'none';
+    setInfoPage(1);
     cardAscetic.style.display = 'block';
     header.style.display = 'none';
     btnClose.style.display = 'block';   

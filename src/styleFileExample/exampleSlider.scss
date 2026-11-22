@@ -43,12 +43,13 @@
     gap: 15px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth; 
-        .template-card {            
+        .template-card {      
+            margin-top: 30px;      
             flex: 0 0 420px;  
             width: 420px;  
             height: 630px;
             scroll-snap-align: start;            
-            background: vars.$bg-template1;
+            background: linear-gradient(90deg, #42321d, #1a1105);
             border: 1px solid #473014;
             border-radius: 10px;
             padding: 10px;
@@ -66,6 +67,7 @@
                 color: vars.$color-text;
             }
             .section-menu {
+                
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -80,7 +82,7 @@
                 font-size: 1rem;
             }    
             @media(max-width: 1400px) {
-                height: 650px;
+                height: 630px;
             }        
             @media(max-width: 1200px) {
                 height: 750px;
@@ -96,6 +98,7 @@
                 scroll-snap-align: start;
                 scroll-snap-stop: always;
                  height: 650px;
+
                 } 
             @media(max-width: 380px) {                
                 box-sizing: border-box;
@@ -119,7 +122,7 @@
         gap: 5px;
         color: vars.$color-text;
         strong {
-             color: #379408;
+             color: #379408; 
         }
         .template-result {
             box-sizing: border-box;
@@ -249,5 +252,18 @@ hr {
 
 
 
-  
+  .btn-video {
+    display: flex;    
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;    
+    width: 250px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(90deg, #42321d, #1a1105);
+    color: #379408;
+     box-shadow: 7px 3px 11px -2px rgba(0,0,0,0.75);
+  }
   
