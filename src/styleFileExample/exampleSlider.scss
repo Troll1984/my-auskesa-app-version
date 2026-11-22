@@ -66,8 +66,7 @@
                 text-align: center;
                 color: vars.$color-text;
             }
-            .section-menu {
-                
+            .section-menu {                
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -121,8 +120,9 @@
         flex-direction: column;
         gap: 5px;
         color: vars.$color-text;
+        margin-top: 5px;
         strong {
-             color: #379408; 
+             color: #379408;              
         }
         .template-result {
             box-sizing: border-box;
@@ -207,7 +207,7 @@
 hr {
     width: 95%;
     margin: 5px auto;
-    margin-bottom: 5px;
+    margin-top: 15px;
     background: #46413a;
 }
 .buttons-arrow {
@@ -265,5 +265,11 @@ hr {
     background: linear-gradient(90deg, #42321d, #1a1105);
     color: #379408;
      box-shadow: 7px 3px 11px -2px rgba(0,0,0,0.75);
+  }
+  .template-description {   
+    span {
+        margin-right: 100px;
+        
+    }
   }
   

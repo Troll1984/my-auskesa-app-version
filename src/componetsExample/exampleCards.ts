@@ -1,6 +1,6 @@
 
 import sound2 from '../assets/sound/sound-2.mp3';
-
+import LearninglVideo from '../assets/video/sountTreck.mp4';
 const template = document.querySelector<HTMLElement>('#template');
 const sectionOne = document.querySelector<HTMLElement>('.section-one');
 const cardAscetic = document.querySelector<HTMLElement>('.card-ascetic');
@@ -104,3 +104,33 @@ document.querySelectorAll<HTMLButtonElement>('.template-use').forEach((button) =
     });   
   });
 });
+
+// Обучающее видео
+const btnVideo =  document.querySelector<HTMLButtonElement>('.btn-video');
+
+ 
+btnVideo?.addEventListener('click', () => {
+  video();
+})
+
+function video() {
+  const overlay = document.createElement('div');
+  overlay.className = 'video-overlay';
+
+  overlay.innerHTML = `
+    <div class="video-modal">
+      <button class="close-video">✖</button>
+      <video controls autoplay playsinline>
+        <source src="${LearninglVideo}" type="video/mp4">
+      </video>
+    </div>
+  `;
+
+  document.body.append(overlay);
+    const closeVideo = overlay.querySelector('.close-video');
+
+  closeVideo?.addEventListener('click', () => {
+    overlay.remove();
+  });
+}
+

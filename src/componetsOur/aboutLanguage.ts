@@ -292,7 +292,7 @@ if(infoBlock) {
 
   const englishHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
-    <h2>🧘 What is asceticism?</h2>
+    <h2>ℹ️ About My Askesa</h2>
     <p>My Askesis is an independent project created by one person with the desire to make something useful for others.
     This app is the result of personal effort, learning, ideas, and a strong desire to develop a product that helps people 
     improve themselves, build healthy habits, and achieve their goals.
@@ -301,7 +301,7 @@ if(infoBlock) {
 
   const dutchHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
-    <h2>🧘 Wat is ascese?</h2>
+    <h2>ℹ️ Over My Askesa</h2>
     <p>My Askesis is een onafhankelijk project dat door één persoon is opgezet met de wens om iets nuttigs voor anderen te creëren.
     Deze app is het resultaat van eigen inspanningen, leerervaringen, ideeën en een grote motivatie om een product te ontwikkelen dat 
     mensen helpt zichzelf te verbeteren, goede gewoontes aan te leren en hun doelen te bereiken.
@@ -326,25 +326,25 @@ if(donatBlock) {
 
    const englishHtml = `<div>
    <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div> 
-  <h2>Support the Project</h2>
+  <h2>💖 Support the Project</h2>
     <p>If you enjoy using My Askesis and would like to help it grow, you can support the project with a voluntary contribution.
     Every contribution is motivation to keep working, introduce new features, and make the app even better.
     Thank you for being part of My Askesis! ❤️</p>
         <div class="donat">
-          <a href="https://send.monobank.ua/jar/ABHtdrHpUN" target="_blank" rel="noopener noreferrer" class="support-btn"><i class="fa-solid fa-mug-saucer"></i>Support via Monobank ❤️</a>
-          <a href="https://donatello.to/Developer-Apps"target="_blank"rel="noopener noreferrer"class="support-btn"><i class="fa-solid fa-mug-hot"></i>Support via Donatello ❤️</a>  
+          <a href="https://send.monobank.ua/jar/ABHtdrHpUN" target="_blank" rel="noopener noreferrer" class="support-btn"><i class="fa-solid fa-mug-saucer"></i>☕ Support via Monobank ❤️</a>
+          <a href="https://donatello.to/Developer-Apps"target="_blank"rel="noopener noreferrer"class="support-btn"><i class="fa-solid fa-mug-hot"></i>☕ Support via Donatello ❤️</a>  
         </div>          
   </div>`;
 
   const dutchHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div> 
-  <h2>Steun het project</h2>
+  <h2>💖 Steun het project</h2>
     <p>Als je My Askesis leuk vindt en wilt helpen bij de verdere ontwikkeling, kun je het project steunen met een vrijwillige bijdrage.
     Elke bijdrage is een motivatie om door te gaan, nieuwe functies toe te voegen en de app nog beter te maken.
     Bedankt dat je deel uitmaakt van My Askesis! ❤️</p>
         <div class="donat">
-            <a href="https://send.monobank.ua/jar/ABHtdrHpUN" target="_blank" rel="noopener noreferrer" class="support-btn"><i class="fa-solid fa-mug-saucer"></i>Steun via Monobank ❤️</a>
-            <a href="https://donatello.to/Developer-Apps"target="_blank"rel="noopener noreferrer"class="support-btn"><i class="fa-solid fa-mug-hot"></i>Steun via Donatello ❤️</a>  
+            <a href="https://send.monobank.ua/jar/ABHtdrHpUN" target="_blank" rel="noopener noreferrer" class="support-btn"><i class="fa-solid fa-mug-saucer"></i>☕ Steun via Monobank ❤️</a>
+            <a href="https://donatello.to/Developer-Apps"target="_blank"rel="noopener noreferrer"class="support-btn"><i class="fa-solid fa-mug-hot"></i>☕ Steun via Donatello ❤️</a>  
         </div>        
    
   </div>`;
@@ -368,34 +368,34 @@ if(comments) {
 
    const englishHtml = `<div>
     <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
-    <h2>Your Opinion Matters!</h2>
+    <h2>💡 Your Opinion Matters!</h2>
       <p>My Askesis is constantly evolving, and your feedback is very important to me.
       I would be happy to hear your reviews, suggestions, recommendations, and ideas for improving the app in the comments.
       Perhaps your suggestion will become the next useful feature of My Askesis!
       Thank you for helping make this project better! ❤️</p>
 
       <form id="form-comments">
-          <h3>Comments (<span id="counter">0</span>)</h3>         
-          <label for="comment-text">Your comment</label>
+          <h3>💬 Comments (<span id="counter">0</span>)</h3>         
+          <label for="comment-text">📝 Your comment</label>
           <textarea id="comment-text" name="comment" maxlength="1000" rows="4" required></textarea>
-          <button type="submit">Submit</button>
+          <button type="submit">📨 Submit</button>
       </form>
        <div class="show-comments"> </div> 
    </div>`
 
    const dutchHtml = `<div>
     <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>   
-    <h2>Jouw mening is belangrijk!</h2>
+    <h2>💡 Jouw mening is belangrijk!</h2>
       <p>My Askesis blijft zich voortdurend ontwikkelen en jouw mening is voor mij erg belangrijk.
       Ik ontvang graag je feedback, wensen, aanbevelingen en ideeën om de app te verbeteren.
       Misschien wordt jouw suggestie wel de volgende handige functie van My Askesis!
       Bedankt dat je helpt om dit project beter te maken! ❤️</p>
 
     <form id="form-comments">
-        <h3>Reacties (<span id="counter">0</span>)</h3>        
-        <label for="comment-text">Je reactie</label>
+        <h3>💬 Reacties (<span id="counter">0</span>)</h3>        
+        <label for="comment-text">📝 Je reactie</label>
         <textarea id="comment-text" name="comment" maxlength="1000" rows="4" required></textarea>
-        <button type="submit">Verzenden</button>
+        <button type="submit">📨 Verzenden</button>
     </form>
     <div class="show-comments"></div> 
    </div>`
@@ -407,3 +407,103 @@ if(comments) {
         applyAboutLanguage();
         window.addEventListener('languageChanged', applyAboutLanguage)
 }
+
+
+const infoPageSecond = document.querySelector<HTMLElement>('.info-page-second');
+if(infoPageSecond) {
+   const ukrainianHtml = infoPageSecond.innerHTML;
+    
+    const englishHtml = `<div>
+       <h2>✨ Asceticism in the Esoteric and Spiritual Sense</h2>
+<p>In the esoteric and spiritual sense, asceticism is the voluntary practice of self-restraint in certain areas of life for the sake of inner growth, purification of consciousness, and achieving a specific goal.</p>
+
+<h2>🔮 What Does Asceticism Mean in Esotericism?</h2>
+<p>Asceticism is considered a way to:</p>
+<ul class="info-list">
+  <li><strong>Direct energy</strong> — give up familiar pleasures to focus your energy on what you wish to achieve.</li>
+  <li><strong>Purify consciousness</strong> — free yourself from dependencies, negative thoughts, and destructive habits.</li>
+  <li><strong>Develop willpower</strong> — learn to control your desires rather than become controlled by them.</li>
+  <li><strong>Change your inner state</strong> — develop mindfulness, discipline, and concentration.</li>
+  <li><strong>Fulfil an intention</strong> — use a period of self-restraint to work towards a specific goal.</li>
+</ul>
+
+<h2>⚡ Asceticism and the Energy of Intention</h2>
+<p>In some esoteric teachings, there is a belief that practising asceticism accumulates a special kind of energy that a person can direct towards fulfilling their intention.</p>
+<p>For example:</p>
+<ol class="info-list">
+  <li>A person gives up sweets for 30 days.</li>
+  <li>Every day, they keep the promise they made to themselves.</li>
+  <li>They direct their freed-up attention and energy towards a specific goal.</li>
+  <li>At the end of the period, they symbolically dedicate the result to their goal or desire.</li>
+</ol>
+
+<h2>🧘 Examples of Ascetic Practices</h2>
+<ul class="info-list">
+  <li>Giving up alcohol.</li>
+  <li>Giving up sugar.</li>
+  <li>Daily meditation.</li>
+  <li>Daily walks.</li>
+  <li>Avoiding social media.</li>
+  <li>Daily reading and learning.</li>
+  <li>Practising gratitude.</li>
+  <li>Managing negative thoughts.</li>
+</ul>
+
+<h2>💡 The Main Difference</h2>
+<p>In the conventional sense, asceticism is about self-discipline and self-restraint.</p>
+<p>In the esoteric sense, it is also a spiritual practice in which voluntary self-restraint is associated with the transformation of inner energy and the manifestation of intention.</p>
+<p><strong>Important:</strong> The belief that asceticism can energetically fulfil desires belongs to esoteric beliefs and has no scientific evidence. However, developing discipline, mindfulness, and willpower is entirely achievable.</p>
+    </div>`;
+
+
+    const dutchHtml = `<div>
+    <h2>✨ Ascese in esoterische en spirituele zin</h2>
+<p>In esoterische en spirituele zin is ascese het vrijwillig beperken van jezelf op bepaalde gebieden van het leven, met als doel innerlijke groei, bewustzijnszuivering en het bereiken van een bepaald doel.</p>
+
+<h2>🔮 Wat betekent ascese binnen de esoterie?</h2>
+<p>Ascese wordt beschouwd als een manier om:</p>
+<ul class="info-list">
+  <li><strong>Energie te richten</strong> — afstand te doen van vertrouwde genoegens om je energie te concentreren op wat je wilt bereiken.</li>
+  <li><strong>Het bewustzijn te zuiveren</strong> — jezelf te bevrijden van afhankelijkheden, negatieve gedachten en destructieve gewoonten.</li>
+  <li><strong>Wilskracht te ontwikkelen</strong> — leren je verlangens te beheersen in plaats van erdoor beheerst te worden.</li>
+  <li><strong>Je innerlijke toestand te veranderen</strong> — bewustzijn, discipline en concentratie te ontwikkelen.</li>
+  <li><strong>Een intentie te verwezenlijken</strong> — een periode van zelfbeperking gebruiken om aan een specifiek doel te werken.</li>
+</ul>
+
+<h2>⚡ Ascese en de energie van intentie</h2>
+<p>In sommige esoterische leerstellingen bestaat het geloof dat het beoefenen van ascese een bijzondere energie opbouwt, die iemand kan richten op het verwezenlijken van zijn of haar intentie.</p>
+<p>Bijvoorbeeld:</p>
+<ol class="info-list">
+  <li>Iemand stopt gedurende 30 dagen met het eten van zoetigheid.</li>
+  <li>Elke dag houdt die persoon zich aan de belofte die hij of zij zichzelf heeft gedaan.</li>
+  <li>De vrijgekomen aandacht en energie worden gericht op een specifiek doel.</li>
+  <li>Aan het einde van deze periode wordt het resultaat symbolisch opgedragen aan het doel of de wens.</li>
+</ol>
+
+<h2>🧘 Voorbeelden van ascese</h2>
+<ul class="info-list">
+  <li>Afzien van alcohol.</li>
+  <li>Afzien van suiker.</li>
+  <li>Dagelijks mediteren.</li>
+  <li>Dagelijkse wandelingen maken.</li>
+  <li>Afzien van sociale media.</li>
+  <li>Dagelijks lezen en leren.</li>
+  <li>Dankbaarheid beoefenen.</li>
+  <li>Negatieve gedachten beheersen.</li>
+</ul>
+
+<h2>💡 Het belangrijkste verschil</h2>
+<p>In de gebruikelijke betekenis is ascese zelfdiscipline en zelfbeperking.</p>
+<p>In esoterische zin is het ook een spirituele praktijk waarbij vrijwillige zelfbeperking wordt verbonden met de transformatie van innerlijke energie en het verwezenlijken van een intentie.</p>
+<p><strong>Belangrijk:</strong> Het idee dat ascese wensen energetisch kan laten uitkomen, behoort tot esoterische overtuigingen en is niet wetenschappelijk bewezen. Het ontwikkelen van discipline, bewustzijn en wilskracht is daarentegen wel degelijk mogelijk.</p>
+     </div>`;
+  function applyAboutLanguage(): void {
+          infoPageSecond!.innerHTML = currentLanguage === 'uk' ? ukrainianHtml : currentLanguage === 'nl' ? dutchHtml : englishHtml;
+        }
+      
+        applyAboutLanguage();
+        window.addEventListener('languageChanged', applyAboutLanguage)
+
+}
+
+ 
