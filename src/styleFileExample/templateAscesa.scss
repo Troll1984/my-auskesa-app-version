@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 15px;         
     .card-ascetic {       
         width: 100%;
         height: 700px;
@@ -26,22 +26,25 @@
             }
         }
         @media(max-width: 1400px){
-           height: 680px;
+           height: 700px;
+           margin-top: 10px;
+           
         }       
         @media(max-width: 1200px){
             height: 850px;
             width: 90%;
             margin-top: 70px;
+            
            
         }
         @media(max-width: 800px){
-            height: 800px;
+            height: 780px;
             width: 90%;            
         }
         @media(max-width: 600px){
             height: 700px;
             width: 110%;
-            margin-top: 50px;
+            margin-top: 50px; 
             padding: 5px;            
         }
     }

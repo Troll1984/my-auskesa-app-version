@@ -53,7 +53,7 @@ export const translations = {
    statusActive: '🟢 Аскеза триває.',  
    templateHeading: 'Оберіть шаблон аскези',
    saveAusterity: 'Збережені аскези',
-   templateDays: 'днів', templateGoal: 'Мета:', templateChoose: 'Обрати',
+   templateDays: 'днів', templateGoal: 'Мета:', templateChoose: 'Обрати', templateIntent: 'Я беру аскезу на:',
   },
   en: { 
     Support: 'Support Project',
@@ -108,7 +108,7 @@ export const translations = {
     statusActive: '🟢 Askesis in progress.'   
     ,templateHeading: 'Choose an askesis template',
     saveAusterity: 'Saved Askesis',
-    templateDays: 'days', templateGoal: 'Goal:', templateChoose: 'Choose',
+    templateDays: 'days', templateGoal: 'Goal:', templateChoose: 'Choose', templateIntent: 'I commit to:',
   },
   nl: {
     Support: 'Steun project',
@@ -126,7 +126,7 @@ export const translations = {
   calendarTitle: 'Markeer voltooide dagen', deleteButton: 'Verwijderen', statusFailed: '❌ Askesis niet voltooid.', 
   statusCompleted: '✅ Askesis voltooid.', statusPlanned: '⏳ Askesis is nog niet begonnen', statusActive: '🟢 Askesis is bezig.', 
   templateHeading: 'Kies een askesis-sjabloon', saveAusterity: 'Opgeslagen askesis', templateDays: 'dagen', templateGoal: 'Doel:', 
-  templateChoose: 'Kiezen',
+  templateChoose: 'Kiezen', templateIntent: 'Ik verbind me ertoe:',
   },
 };
    

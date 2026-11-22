@@ -4,7 +4,7 @@ import image3 from '../assets/img/image3.png';
 import image4 from '../assets/img/image4.png';
 import image5 from '../assets/img/image5.png';
 import sleepImage from '../assets/img/category-sleep.jpg';
-import nutritionImage from '../assets/img/category-nutrition.jpg';
+import nutritionImage from '../assets/img/category-nutrition.png';
 import movementImage from '../assets/img/category-movement.jpg';
 import waterImage from '../assets/img/category-water.jpg';
 import meditationImage from '../assets/img/category-meditation.jpg';
@@ -77,7 +77,7 @@ const personalTemplates: Record<string, AsceticTemplate> = {
   },
   'daily-programming': {
     id: 'daily-programming', img: image5, title: 'Програмування ', titleEn: 'Programming', titleNl: 'Programmeren',
-    description: 'Займатися програмуванням по 90 хвилин щодня.', descriptionEn: 'Practice programming for 90 minutes every day.', descriptionNl: 'Programmeer elke dag 90 minuten.',
+    description: 'Займатися програмуванням по 30 хвилин щодня.', descriptionEn: 'Practice programming for 30 minutes every day.', descriptionNl: 'Programmeer elke dag 30 minuten.',
     result: 'Отримати роботу із зарплатою 3000$', resultEn: 'Get a job with a $3,000 salary.', resultNl: 'Vind een baan met een salaris van $3.000.', durationDays: 21,
   },
 };
@@ -86,10 +86,10 @@ const personalTemplates: Record<string, AsceticTemplate> = {
 const sectionData: SectionData[] = [
   {
     id: 'health', title: ['Здоров’я', 'Health', 'Gezondheid'], categories: [
-      { id: 'sleep', title: ['Сон', 'Sleep', 'Slaap'], description: ['Дотримуватися стабільного часу сну та підйому.', 'Keep a consistent bedtime and wake-up time.', 'Houd vaste tijden aan om te slapen en op te staan.'], result: ['Покращити якість сну та відновлення.', 'Improve sleep quality and recovery.', 'Verbeter je slaapkwaliteit en herstel.'] },
-      { id: 'nutrition', title: ['Збалансоване харчування', 'Balanced nutrition', 'Gebalanceerde voeding'], description: ['Щодня обирати збалансовані страви та не пропускати прийоми їжі.', 'Choose balanced meals each day and avoid skipping meals.', 'Kies elke dag gebalanceerde maaltijden en sla geen maaltijden over.'], result: ['Підтримати енергію та уважніше ставитися до харчування.', 'Support your energy and build mindful eating habits.', 'Ondersteun je energie en eet bewuster.'] },
-      { id: 'movement', title: ['Щоденний рух', 'Daily movement', 'Dagelijks bewegen'], description: ['Рухатися щонайменше 30 хвилин щодня у зручному темпі.', 'Move for at least 30 minutes each day at a comfortable pace.', 'Beweeg elke dag minstens 30 minuten in een prettig tempo.'], result: ['Зробити фізичну активність регулярною звичкою.', 'Make physical activity a regular habit.', 'Maak bewegen een vaste gewoonte.'] },
-      { id: 'water', title: ['Пити воду', 'Drink water', 'Water drinken'], description: ['Регулярно пити воду протягом дня відповідно до власної потреби.', 'Drink water regularly throughout the day according to your needs.', 'Drink verspreid over de dag water, afgestemd op je behoefte.'], result: ['Сформувати уважну звичку підтримувати водний баланс.', 'Build a mindful hydration habit.', 'Ontwikkel een bewuste gewoonte om voldoende te drinken.'] },
+      { id: 'sleep', title: ['Сон', 'Sleep', 'Slaap'], description: ['Щодня лягати спати не пізніше 21:00.', 'Go to bed no later than 9:00 PM every day.', 'Elke dag uiterlijk om 21:00 uur naar bed gaan.'], result: ['Покращити якість сну та відновлення.', 'Improve sleep quality and recovery.', 'Verbeter je slaapkwaliteit en herstel.'] },
+      { id: 'nutrition', title: ['Харчування', 'Nutrition', 'Voeding'], description: ['Їсти усвідомлено, не відволікаючись на гаджети.📵', 'Eat mindfully, without distractions from digital devices.📵', 'Bewust eten, zonder afleiding van digitale apparaten.📵'], result: ['Підтримати енергію та уважніше ставитися до харчування.', 'Support your energy and build mindful eating habits.', 'Ondersteun je energie en eet bewuster.'] },
+      { id: 'movement', title: ['Красиве тіло', 'Beautiful body', 'Een mooi lichaam'], description: ['Щодня виходити на пробіжку.', 'Go for a run every day.', 'Elke dag gaan hardlopen.'], result: ['Зробити фізичну активність регулярною звичкою.', 'Make physical activity a regular habit.', 'Maak bewegen een vaste gewoonte.'] },
+      { id: 'water', title: ['Пити воду', 'Drink water', 'Water drinken'], description: ['Випивати одну склянку води щоранку.', 'Drink one glass of water every morning.', 'Elke ochtend één glas water drinken.'], result: ['Сформувати уважну звичку підтримувати водний баланс.', 'Build a mindful hydration habit.', 'Ontwikkel een bewuste gewoonte om voldoende te drinken.'] },
       { id: 'no-sweets', personalId: 'no-sweets', title: ['', '', ''], description: ['', '', ''], result: ['', '', ''] },
     ],
   },
@@ -113,11 +113,11 @@ const sectionData: SectionData[] = [
   },
   {
     id: 'relationships', title: ['Стосунки', 'Relationships', 'Relaties'], categories: [
-      { id: 'family', title: ['Час із сім’єю', 'Family time', 'Tijd met familie'], description: ['Щодня приділяти близьким час без телефону та інших відволікань.', 'Spend time with loved ones each day without your phone or other distractions.', 'Breng elke dag tijd door met dierbaren zonder telefoon of andere afleiding.'], result: ['Зробити спілкування з рідними регулярним пріоритетом.', 'Make time with loved ones a regular priority.', 'Maak tijd met dierbaren een vaste prioriteit.'] },
-      { id: 'partnership', title: ['Увага до партнера', 'Be present with your partner', 'Aandacht voor je partner'], description: ['Щодня знаходити час для уважної розмови з партнером.', 'Make time each day for a thoughtful conversation with your partner.', 'Neem elke dag tijd voor een aandachtig gesprek met je partner.'], result: ['Підтримувати відкрите та уважне спілкування.', 'Support open and attentive communication.', 'Stimuleer open en aandachtige communicatie.'] },
+      { id: 'family', title: ['Час із сім’єю', 'Family time', 'Tijd met familie'], description: ['Щодня приділяти близьким щонайменше 1 годину без телефону та інших відволікань.', 'Spend at least one hour every day with loved ones, without phones or other distractions.', 'Besteed elke dag minstens één uur aan je dierbaren, zonder telefoons of andere afleidingen.'], result: ['Зробити спілкування з рідними регулярним пріоритетом.', 'Make time with loved ones a regular priority.', 'Maak tijd met dierbaren een vaste prioriteit.'] },
+      { id: 'partnership', title: ['Увага до партнера', 'Be present with your partner', 'Aandacht voor je partner'], description: ['Щодня знаходити час, щоб сказати партнеру або партнерці «Я тебе люблю» щонайменше 3 рази.', 'Make time every day to tell your partner “I love you” at least 3 times.', 'Neem elke dag de tijd om minstens 3 keer tegen je partner te zeggen: "Ik hou van je."'], result: ['Підтримувати відкрите та уважне спілкування.', 'Support open and attentive communication.', 'Stimuleer open en aandachtige communicatie.'] },
       { id: 'kindness', title: ['Доброта щодня', 'Daily kindness', 'Elke dag vriendelijk'], description: ['Щодня робити один невеликий добрий вчинок.', 'Do one small act of kindness each day.', 'Doe elke dag één kleine vriendelijke daad.'], result: ['Частіше проявляти турботу у повсякденні.', 'Show care more often in everyday life.', 'Toon vaker zorg en aandacht in het dagelijks leven.'] },
-      { id: 'boundaries', title: ['Особисті межі', 'Personal boundaries', 'Persoonlijke grenzen'], description: ['Щодня помічати власні потреби та спокійно озвучувати свої межі.', 'Notice your needs each day and communicate your boundaries calmly.', 'Let elke dag op je behoeften en geef je grenzen rustig aan.'], result: ['Краще розуміти власні потреби та поважати їх.', 'Understand and respect your needs better.', 'Begrijp en respecteer je behoeften beter.'] },
-      { id: 'communication', title: ['Живе спілкування', 'Meaningful conversation', 'Echt contact'], description: ['Щодня підтримувати змістовну розмову з близькою людиною.', 'Have a meaningful conversation with someone close each day.', 'Voer elke dag een betekenisvol gesprek met iemand die je dierbaar is.'], result: ['Приділяти більше уваги живому спілкуванню.', 'Give more attention to in-person connection.', 'Geef meer aandacht aan persoonlijk contact.'] },
+      { id: 'boundaries', title: ['Особисті межі', 'Personal boundaries', 'Persoonlijke grenzen'], description: ['Щодня щонайменше один раз помічати власні потреби та спокійно озвучувати свої межі.', 'At least once a day, recognize your own needs and calmly communicate your boundaries.', 'Herken dagelijks minstens één keer je eigen behoeften en geef rustig je grenzen aan.'], result: ['Краще розуміти власні потреби та поважати їх.', 'Understand and respect your needs better.', 'Begrijp en respecteer je behoeften beter.'] },
+      { id: 'communication', title: ['Живе спілкування', 'Meaningful conversation', 'Echt contact'], description: ['Щодня виходити на прогулянку та спілкуватися з людьми наживо.', 'Go for a walk and interact with people face-to-face every day.', 'Elke dag een wandeling maken en persoonlijk contact hebben met mensen.'], result: ['Приділяти більше уваги живому спілкуванню.', 'Give more attention to in-person connection.', 'Geef meer aandacht aan persoonlijk contact.'] },
     ],
   },
 ];

@@ -5,6 +5,7 @@ import { supabase } from '../supabase';
 const selectedDurations = new Map<string, number>();
 const durationOptions = [7, 14, 21, 30, 90];
 const selectedTitler = new Map<string, string>();
+const templateGoalKey = 'askesis-template-goal:';
  
 
 const templateGrid = document.querySelector<HTMLElement>('#template-grid');
@@ -73,9 +74,11 @@ function renderTemplates(): void {
         `).join('')}
       </div>
       
-      <p class="template-description">${currentLanguage === 'uk' ? selectedTitleTemplate.description : currentLanguage === 'nl' ? selectedTitleTemplate.descriptionNl : selectedTitleTemplate.descriptionEn}</p>  
+      <p class="template-description"><span>${t.templateIntent}</span> ${currentLanguage === 'uk' ? selectedTitleTemplate.description : currentLanguage === 'nl' ? selectedTitleTemplate.descriptionNl : selectedTitleTemplate.descriptionEn}</p>  
       <hr>
-      <p><strong>${t.templateGoal}</strong> <span class="template-result">${currentLanguage === 'uk' ? selectedTitleTemplate.result : currentLanguage === 'nl' ? selectedTitleTemplate.resultNl : selectedTitleTemplate.resultEn}</span></p>
+      <label class="template-goal-label"><strong>${t.templateGoal}</strong>
+        <textarea class="template-result" data-goal-template-id="${selectedTitleTemplate.id}" rows="2" aria-label="${t.templateGoal.replace(':', '')}">${escapeHtml(localStorage.getItem(templateGoalKey + selectedTitleTemplate.id) ?? '')}</textarea>
+      </label>
 
       <div class="btnTemp"><button class="template-use" type="button" data-template-id="${template.id}">${t.templateChoose}</button></div>
     </article>
@@ -83,9 +86,21 @@ function renderTemplates(): void {
   }).join('');
 }
 
+function escapeHtml(value: string): string {
+  return value.replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[character]!);
+}
+
 if (templateGrid) {
   renderTemplates();
   window.addEventListener('languageChanged', renderTemplates);
+
+  templateGrid.addEventListener('input', (event) => {
+    if (!(event.target instanceof HTMLTextAreaElement) || !event.target.matches('.template-result')) return;
+    const goalTemplateId = event.target.dataset.goalTemplateId;
+    if (goalTemplateId) localStorage.setItem(templateGoalKey + goalTemplateId, event.target.value);
+  });
 
   templateGrid.addEventListener('click', async (event) => {
     if (!(event.target instanceof Element)) return;
@@ -122,14 +137,14 @@ if (templateGrid) {
           : currentLanguage === 'nl' ? titleTemplate.titleNl : titleTemplate.titleEn;
       }
       const description = card?.querySelector<HTMLElement>('.template-description');
-      const result = card?.querySelector<HTMLElement>('.template-result');
+      const result = card?.querySelector<HTMLTextAreaElement>('.template-result');
       if (titleTemplate && description) {
-        description.textContent = currentLanguage === 'uk' ? titleTemplate.description
-          : currentLanguage === 'nl' ? titleTemplate.descriptionNl : titleTemplate.descriptionEn;
+        description.innerHTML = `<span>${translations[currentLanguage].templateIntent}</span> ${currentLanguage === 'uk' ? titleTemplate.description
+          : currentLanguage === 'nl' ? titleTemplate.descriptionNl : titleTemplate.descriptionEn}`;
       }
       if (titleTemplate && result) {
-        result.textContent = currentLanguage === 'uk' ? titleTemplate.result
-          : currentLanguage === 'nl' ? titleTemplate.resultNl : titleTemplate.resultEn;
+        result.value = localStorage.getItem(templateGoalKey + titleTemplate.id) ?? '';
+        result.dataset.goalTemplateId = titleTemplate.id;
       }
       const durationLabel = card?.querySelector<HTMLElement>('.template-duration');
       if (durationLabel && titleTemplate) {
@@ -231,12 +246,16 @@ if (durationButton) {
       const formatDate = (date: Date) =>
         `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}.${date.getFullYear()}`;
 
-      const name = currentLanguage === 'uk' ? selectedTemplate.title
-        : currentLanguage === 'nl' ? selectedTemplate.titleNl
-          : selectedTemplate.titleEn;
-      const result = currentLanguage === 'uk' ? selectedTemplate.result
-        : currentLanguage === 'nl' ? selectedTemplate.resultNl
-          : selectedTemplate.resultEn;
+      const templateDescription = currentLanguage === 'uk' ? selectedTemplate.description
+        : currentLanguage === 'nl' ? selectedTemplate.descriptionNl
+          : selectedTemplate.descriptionEn;
+      const name = `${translations[currentLanguage].templateIntent} ${templateDescription}`;
+      const resultInput = button.closest<HTMLElement>('.template-card')?.querySelector<HTMLTextAreaElement>('.template-result');
+      const result = resultInput?.value.trim() ?? '';
+      if (!result) {
+        alert(currentLanguage === 'uk' ? 'Вкажіть мету аскези.' : currentLanguage === 'nl' ? 'Vul het doel van de askesis in.' : 'Enter an askesis goal.');
+        return;
+      }
 
      // Шифруем данные выбранного шаблона
 const { data: encryptionData, error: encryptionError } =

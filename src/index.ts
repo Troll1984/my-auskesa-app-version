@@ -2,7 +2,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './style.scss'
 import { datePicker } from './componetsIndex/calendar';
 import { asceticTemplates, templateStorageKey } from './componetsExample/templateAscesa';
-import { currentLanguage } from './componetsOur/lang';
+import { currentLanguage, translations } from './componetsOur/lang';
 import './componetsIndex/saveAscetic';
 import './componetsIndex/auth'; 
 import './componetsIndex/shodowToggle'; 
@@ -20,7 +20,8 @@ if (selectedTemplateId) {
   const resultInput = document.querySelector<HTMLTextAreaElement>('#result');
 
   if (selectedTemplate && nameInput && resultInput) {
-    nameInput.value = currentLanguage === 'uk' ? selectedTemplate.description : currentLanguage === 'nl' ? selectedTemplate.descriptionNl : selectedTemplate.descriptionEn;
+    const templateDescription = currentLanguage === 'uk' ? selectedTemplate.description : currentLanguage === 'nl' ? selectedTemplate.descriptionNl : selectedTemplate.descriptionEn;
+    nameInput.value = `${translations[currentLanguage].templateIntent} ${templateDescription}`;
     resultInput.value = currentLanguage === 'uk' ? selectedTemplate.result : currentLanguage === 'nl' ? selectedTemplate.resultNl : selectedTemplate.resultEn;
 
     // Начало — завтра; длительность берётся из шаблона.
