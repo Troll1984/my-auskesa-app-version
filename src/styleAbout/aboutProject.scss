@@ -27,7 +27,7 @@
         overflow-y: auto;    
         overflow-x: hidden;
         box-sizing: border-box;
-        height: 800px;
+        height:  450px;
         margin-top: 50px;
         background: vars.$bg-input;
         border-radius: vars.$radius-button;
@@ -52,18 +52,10 @@
                 width: 100%;
              }
         }
-        @media(max-width: 1400px) {
-                height:  700px;
-        } 
-        @media(max-width: 1200px) {
-                height:  950px;
-        }
-        @media(max-width: 1200px) {
-                height:  850px;
-        }
+        
         @media(max-width: 600px) {                 
                  padding: 10px;
-                 height:  700px; 
+                 height:  500px; 
                 margin-top: 25px;       
         } 
        

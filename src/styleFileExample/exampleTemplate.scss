@@ -4,8 +4,10 @@
     background: none;   
     padding: 8px;
     border-radius: 7px;
-    font-size: 1rem;
-    box-shadow: -1px 0px 17px 1px rgba(0,0,0,0.75);
+    font-size: 1.1rem;
+   
+    font-weight: bold;
+   
 }
 .template-calendar {    
     width: 35px;
@@ -94,7 +96,7 @@
     }
 }
 .titler {
-     width: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,9 +120,12 @@
     min-height: 3.6em;
     white-space: normal;
     overflow-wrap: anywhere;
+    font-weight: bold;
 
     > span{
         color: #379408;
+        margin-right: 10px;
+        font-size: 1.1rem;
     }
     
 }
