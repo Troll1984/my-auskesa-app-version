@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://my-askesa.com/sitemap.xml
+Sitemap: https://app.my-askesa.com/sitemap.xml
