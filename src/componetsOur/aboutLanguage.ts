@@ -72,14 +72,14 @@ if (politic) {
       const englishHtml = `<div>
       <div class="button"><button class="button-arrow-right"><i class="fa-solid fa-right-long"></i></button></div>  
     <h1>🔐 Privacy Policy</h1>
-    <h3>My Askesis</h3>
+    <h3>Askeza</h3>
     <p>Last updated: 08.11.2026</p>
 
     <ul class="listGen">
       <li>📌 General Provisions
-        <p>"My Askesis" - is an application for creating, planning, and tracking personal askesis, habits, and goals.
+        <p>"Askeza" - is an application for creating, planning, and tracking personal askesis, habits, and goals.
           We respect users' privacy and strive to ensure the proper protection of their personal data.
-          By using My Askesis, you agree to the terms of this Privacy Policy.</p>
+          By using Askeza, you agree to the terms of this Privacy Policy.</p>
       </li>
 
       <li>📋 What Data We Collect
@@ -140,7 +140,7 @@ if (politic) {
   <li>📌 Algemene bepalingen
     <p>"My Askesa" - is een applicatie voor het creëren, plannen en bijhouden van persoonlijke askese, gewoonten en doelen.
       Wij respecteren de privacy van onze gebruikers en streven ernaar hun persoonsgegevens goed te beschermen.
-      Door My Askesis te gebruiken, gaat u akkoord met de bepalingen van dit privacybeleid.</p>
+      Door Askeza te gebruiken, gaat u akkoord met de bepalingen van dit privacybeleid.</p>
   </li>
 
   <li>📋 Welke gegevens verzamelen wij?
@@ -210,7 +210,7 @@ if ( condit) {
       <h1>📜 Terms of Use</h1>
 <ul>
   <li><h3>🎯 Purpose of the Application</h3>
-    <p>My Askesis is designed for personal use to develop self-discipline, build healthy habits, maintain personal commitments, and track individual progress.</p>
+    <p>Askeza is designed for personal use to develop self-discipline, build healthy habits, maintain personal commitments, and track individual progress.</p>
   </li>
   <li><h3>👤 Registration and Account</h3>
     <p>Registration may be required to use certain features of the application.
@@ -218,7 +218,7 @@ if ( condit) {
   </li>
   <li><h3>💡 User Responsibility</h3>
     <p>Users independently define their goals, create askesis, and make decisions regarding their completion.
-    My Askesis is a personal organization and self-discipline tool and does not guarantee specific results.</p>
+    Askeza is a personal organization and self-discipline tool and does not guarantee specific results.</p>
   </li>
   <li><h3>📋 Rules of Use</h3>
     <p>When using the application, users are prohibited from:
@@ -228,15 +228,15 @@ if ( condit) {
     using the application for harmful or illegal activities.</p>
   </li>
   <li><h3>🛠️ Service Availability</h3>
-    <p>We strive to ensure the stable operation of My Askesis but do not guarantee uninterrupted service availability.
+    <p>We strive to ensure the stable operation of Askeza but do not guarantee uninterrupted service availability.
     The application may be temporarily unavailable due to maintenance, updates, or technical circumstances beyond our control.</p>
   </li>
   <li><h3>📚 Intellectual Property</h3>
-    <p>The name, design, interface, source code, and other elements of My Askesis are the intellectual property of their respective rights holders.
+    <p>The name, design, interface, source code, and other elements of Askeza are the intellectual property of their respective rights holders.
     Copying, distributing, or using the application's materials without proper authorization is prohibited, except where permitted by law.</p>
   </li>
   <li><h3>✅ Acceptance of Terms</h3>
-    <p>By using My Askesis, users confirm that they have read and agree to this Privacy Policy and the Terms of Use.</p>
+    <p>By using Askeza, users confirm that they have read and agree to this Privacy Policy and the Terms of Use.</p>
   </li>
 </ul>
       </div>`;
@@ -246,7 +246,7 @@ if ( condit) {
         <h1>📜 Gebruiksvoorwaarden</h1>
 <ul>
   <li><h3>🎯 Doel van de applicatie</h3>
-    <p>My Askesis is bedoeld voor persoonlijk gebruik om zelfdiscipline te ontwikkelen, goede gewoonten op te bouwen, persoonlijke verplichtingen na te komen en de eigen voortgang bij te houden.</p>
+    <p>Askeza is bedoeld voor persoonlijk gebruik om zelfdiscipline te ontwikkelen, goede gewoonten op te bouwen, persoonlijke verplichtingen na te komen en de eigen voortgang bij te houden.</p>
   </li>
   <li><h3>👤 Registratie en account</h3>
     <p>Voor het gebruik van bepaalde functies van de applicatie kan registratie vereist zijn.
@@ -254,7 +254,7 @@ if ( condit) {
   </li>
   <li><h3>💡 Verantwoordelijkheid van de gebruiker</h3>
     <p>De gebruiker bepaalt zelfstandig zijn of haar doelen, stelt askeses op en neemt beslissingen over de uitvoering ervan.
-    My Askesis is een hulpmiddel voor persoonlijke organisatie en zelfdiscipline en garandeert geen specifieke resultaten.</p>
+    Askeza is een hulpmiddel voor persoonlijke organisatie en zelfdiscipline en garandeert geen specifieke resultaten.</p>
   </li>
   <li><h3>📋 Gebruiksregels</h3>
     <p>Bij het gebruik van de applicatie is het verboden om:
@@ -264,15 +264,15 @@ if ( condit) {
     de applicatie te gebruiken voor schadelijke of illegale activiteiten.</p>
   </li>
   <li><h3>🛠️ Beschikbaarheid van de dienst</h3>
-    <p>We streven ernaar My Askesis stabiel te laten functioneren, maar garanderen geen ononderbroken beschikbaarheid van de dienst.
+    <p>We streven ernaar Askeza stabiel te laten functioneren, maar garanderen geen ononderbroken beschikbaarheid van de dienst.
     De werking van de applicatie kan tijdelijk worden beperkt door onderhoud, updates of technische omstandigheden buiten onze controle.</p>
   </li>
   <li><h3>📚 Intellectueel eigendom</h3>
-    <p>De naam, het ontwerp, de interface, de broncode en andere onderdelen van My Askesis zijn intellectueel eigendom van hun respectieve rechthebbenden.
+    <p>De naam, het ontwerp, de interface, de broncode en andere onderdelen van Askeza zijn intellectueel eigendom van hun respectieve rechthebbenden.
     Het kopiëren, verspreiden of gebruiken van materiaal uit de applicatie zonder de juiste toestemming is verboden, behalve wanneer dit wettelijk is toegestaan.</p>
   </li>
   <li><h3>✅ Acceptatie van de voorwaarden</h3>
-    <p>Door My Askesis te gebruiken, bevestigt de gebruiker dat hij of zij dit privacybeleid en deze gebruiksvoorwaarden heeft gelezen en ermee akkoord gaat.</p>
+    <p>Door Askeza te gebruiken, bevestigt de gebruiker dat hij of zij dit privacybeleid en deze gebruiksvoorwaarden heeft gelezen en ermee akkoord gaat.</p>
   </li>
 </ul>
       </div>`
@@ -293,7 +293,7 @@ if(infoBlock) {
   const englishHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
     <h2>ℹ️ About My Askesa</h2>
-    <p>My Askesis is an independent project created by one person with the desire to make something useful for others.
+    <p>Askeza is an independent project created by one person with the desire to make something useful for others.
     This app is the result of personal effort, learning, ideas, and a strong desire to develop a product that helps people 
     improve themselves, build healthy habits, and achieve their goals.
     The project is constantly evolving, with many new features and improvements still to come.</p>        
@@ -302,7 +302,7 @@ if(infoBlock) {
   const dutchHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
     <h2>ℹ️ Over My Askesa</h2>
-    <p>My Askesis is een onafhankelijk project dat door één persoon is opgezet met de wens om iets nuttigs voor anderen te creëren.
+    <p>Askeza is een onafhankelijk project dat door één persoon is opgezet met de wens om iets nuttigs voor anderen te creëren.
     Deze app is het resultaat van eigen inspanningen, leerervaringen, ideeën en een grote motivatie om een product te ontwikkelen dat 
     mensen helpt zichzelf te verbeteren, goede gewoontes aan te leren en hun doelen te bereiken.
     Het project blijft zich ontwikkelen en er staan nog veel nieuwe functies en verbeteringen op de planning.</p>
@@ -327,9 +327,9 @@ if(donatBlock) {
    const englishHtml = `<div>
    <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div> 
   <h2>💖 Support the Project</h2>
-    <p>If you enjoy using My Askesis and would like to help it grow, you can support the project with a voluntary contribution.
+    <p>If you enjoy using Askeza and would like to help it grow, you can support the project with a voluntary contribution.
     Every contribution is motivation to keep working, introduce new features, and make the app even better.
-    Thank you for being part of My Askesis! ❤️</p>
+    Thank you for being part of Askeza! ❤️</p>
         <div class="donat">
           <a href="https://send.monobank.ua/jar/ABHtdrHpUN" target="_blank" rel="noopener noreferrer" class="support-btn"><i class="fa-solid fa-mug-saucer"></i>☕ Support via Monobank ❤️</a>
           <a href="https://donatello.to/Developer-Apps"target="_blank"rel="noopener noreferrer"class="support-btn"><i class="fa-solid fa-mug-hot"></i>☕ Support via Donatello ❤️</a>  
@@ -339,9 +339,9 @@ if(donatBlock) {
   const dutchHtml = `<div>
   <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div> 
   <h2>💖 Steun het project</h2>
-    <p>Als je My Askesis leuk vindt en wilt helpen bij de verdere ontwikkeling, kun je het project steunen met een vrijwillige bijdrage.
+    <p>Als je Askeza leuk vindt en wilt helpen bij de verdere ontwikkeling, kun je het project steunen met een vrijwillige bijdrage.
     Elke bijdrage is een motivatie om door te gaan, nieuwe functies toe te voegen en de app nog beter te maken.
-    Bedankt dat je deel uitmaakt van My Askesis! ❤️</p>
+    Bedankt dat je deel uitmaakt van Askeza! ❤️</p>
         <div class="donat">
             <a href="https://send.monobank.ua/jar/ABHtdrHpUN" target="_blank" rel="noopener noreferrer" class="support-btn"><i class="fa-solid fa-mug-saucer"></i>☕ Steun via Monobank ❤️</a>
             <a href="https://donatello.to/Developer-Apps"target="_blank"rel="noopener noreferrer"class="support-btn"><i class="fa-solid fa-mug-hot"></i>☕ Steun via Donatello ❤️</a>  
@@ -369,9 +369,9 @@ if(comments) {
    const englishHtml = `<div>
     <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>
     <h2>💡 Your Opinion Matters!</h2>
-      <p>My Askesis is constantly evolving, and your feedback is very important to me.
+      <p>Askeza is constantly evolving, and your feedback is very important to me.
       I would be happy to hear your reviews, suggestions, recommendations, and ideas for improving the app in the comments.
-      Perhaps your suggestion will become the next useful feature of My Askesis!
+      Perhaps your suggestion will become the next useful feature of Askeza!
       Thank you for helping make this project better! ❤️</p>
 
       <form id="form-comments">
@@ -386,9 +386,9 @@ if(comments) {
    const dutchHtml = `<div>
     <div class="back"><i class="fa-solid fa-arrow-rotate-right"></i></div>   
     <h2>💡 Jouw mening is belangrijk!</h2>
-      <p>My Askesis blijft zich voortdurend ontwikkelen en jouw mening is voor mij erg belangrijk.
+      <p>Askeza blijft zich voortdurend ontwikkelen en jouw mening is voor mij erg belangrijk.
       Ik ontvang graag je feedback, wensen, aanbevelingen en ideeën om de app te verbeteren.
-      Misschien wordt jouw suggestie wel de volgende handige functie van My Askesis!
+      Misschien wordt jouw suggestie wel de volgende handige functie van Askeza!
       Bedankt dat je helpt om dit project beter te maken! ❤️</p>
 
     <form id="form-comments">

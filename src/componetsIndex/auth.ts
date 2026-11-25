@@ -6,7 +6,7 @@ authContainer.id = 'auth-container';
 
 authContainer.innerHTML = `
   <div class="auth-card">
-    <h2 id="auth-title" data-translate='titleAuth'>My Askesis</h2>
+    <h2 id="auth-title" data-translate='titleAuth'>Askeza</h2>
     <p id="auth-subtitle"  data-translate='messAuth'>Log in to your account</p>
 
   <form id="auth-form">

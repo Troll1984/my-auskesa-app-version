@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.myaskesis.app',
-  appName: 'My Askesis',
+  appName: 'Askeza',
   webDir: 'dist'
 };
 
