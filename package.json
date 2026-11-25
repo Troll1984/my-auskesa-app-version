@@ -1,5 +1,6 @@
 {
   "name": "Askeza",
+  "short_name": "Askeza",
   "private": true,
   "version": "0.0.0",
   "type": "module",

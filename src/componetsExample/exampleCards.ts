@@ -1,6 +1,6 @@
 
 import sound2 from '../assets/sound/sound-2.mp3';
-import LearninglVideo from '../assets/video/video-3.mp4';
+import LearninglVideo from '../assets/video/video-5.mp4';
 const template = document.querySelector<HTMLElement>('#template');
 const sectionOne = document.querySelector<HTMLElement>('.section-one');
 const cardAscetic = document.querySelector<HTMLElement>('.card-ascetic');
